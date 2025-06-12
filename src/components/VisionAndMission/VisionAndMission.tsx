@@ -1,11 +1,7 @@
 const Vision = () => {
   return (
     <div className="px-2 md:px-4 2xl:px-7">
-      <div className="flex justify-center mb-7 2xl:mb-8">
-        <h2 className="text-xl 2xl:text-[28px] font-bold text-[#FFA100]">
-          Vision and Mission
-        </h2>
-      </div>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Row 1 */}
         <div className="md:col-span-1 md:order-1">
@@ -16,7 +12,7 @@ const Vision = () => {
           />
         </div>
         <div className="md:col-span-1 md:order-2 flex items-center">
-          <div className="text-center">
+          <div className="flex flex-col pt-3 gap-y-3 2xl:pt-8 2xl:gap-y-8 h-full text-center">
             <h2 className="text-xl 2xl:text-[28px] font-bold text-[#FFA100]">
               Our Mission
             </h2>
@@ -33,9 +29,9 @@ const Vision = () => {
         </div>
 
         {/* Row 2 */}
-        <div className="md:order-3 flex items-center">
-          <div className="md:col-span-1 md:order-2 flex items-center">
-            <div className="text-center">
+        <div className="md:order-3 flex ">
+          <div className="md:col-span-1 md:order-2 flex ">
+            <div className="text-center flex flex-col pt-3 gap-y-3 2xl:pt-8 2xl:gap-y-8">
               <h2 className="text-xl 2xl:text-[28px] font-bold text-[#FFA100]">
                 Our Vision
               </h2>

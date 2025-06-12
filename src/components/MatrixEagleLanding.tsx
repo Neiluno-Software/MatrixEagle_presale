@@ -10,12 +10,13 @@ import { Footer } from "./Fotter/Footer";
 import TokenomicsSection from "./Tokenomics/TokenomicsSection";
 import Vision from "./VisionAndMission/VisionAndMission";
 import TeamAndAdvisors from "./TeamAndAdvisor/TeamAndAdvisors";
+import { PartnersSection } from "./PartnersSection";
 
 export const MatrixEagleLanding: React.FC = () => {
   return (
     <div className="w-full">
       {/* Hero Section with background Image*/}
-      <div className="w-full bg-[url('/herobg1.svg')] bg-contain bg-no-repeat ">
+      <div className="w-full bg-[url('/tech-bg.gif')] bg-contain bg-no-repeat ">
         <Navbar />
         <div className="flex items-center justify-center">
           <div className="w-full">
@@ -41,6 +42,7 @@ export const MatrixEagleLanding: React.FC = () => {
       {/* Footer Section */}
       <AgricultureProblemAndSolution />
       <TeamAndAdvisors />
+      <PartnersSection />
       <FAQSection />
       <Footer />
     </div>

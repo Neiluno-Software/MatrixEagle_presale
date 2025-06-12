@@ -13,7 +13,7 @@ export const TokenomicsImage: React.FC<TokenomicsImageProps> = ({
     <img
       src={src}
       alt={alt}
-      className="object-contain mt-20 w-full aspect-[1.45] max-w-[1387px] max-md:mt-10 max-md:max-w-full"
+      className="object-contain w-full aspect-[1.45] max-w-[1387px] max-md:mt-10 max-md:max-w-full"
     />
   );
 };

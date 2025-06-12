@@ -7,7 +7,7 @@ export const AgricultureProblemAndSolution: React.FC = () => {
     <section className="flex justify-center px-6 py-10 w-full 2xl:mt-12">
       <div className="flex flex-col gap-y-10 items-center  md:w-[75%]">
         <div className=" max-w-full text-xl font-medium tracking-normal leading-6 text-center text-white  max-md:px-5 max-md:py-0 max-md:w-full">
-          <h1 className="text-2xl mb-7 lg:text-[32px] 2xl:text-[64px]  font-medium text-[#FFA100] max-md:text-2xl max-sm:text-xl">
+          <h1 className="text-2xl mb-7 lg:text-[32px] 2xl:text-[40px]  font-medium text-[#FFA100] max-md:text-2xl max-sm:text-xl">
             Agriculture Problem In Latin America
           </h1>
           <div className="text-base 2xl:text-[20px] font-medium ">
@@ -26,7 +26,7 @@ export const AgricultureProblemAndSolution: React.FC = () => {
         </div>
 
         <div className=" flex flex-col items-center max-w-full text-xl font-medium tracking-normal leading-6 text-center text-white  max-md:px-5 max-md:py-0 max-md:w-full">
-          <h1 className="text-lg 2xl:text-2xl font-medium text-[#FFA100] max-md:text-2xl max-sm:text-xl">
+          <h1 className="text-lg 2xl:text-[40px] font-medium text-[#FFA100] max-md:text-2xl max-sm:text-xl">
             Matrix Eagle’s Solution To That:
           </h1>
           <div className="text-base 2xl:text-[20px] font-medium">

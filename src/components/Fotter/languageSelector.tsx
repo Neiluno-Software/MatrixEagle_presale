@@ -19,7 +19,7 @@ export default function LanguageSelector() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="mt-10 2xl:mt-0 relative inline-block text-left">
+    <div className="h-full relative text-left mt-2 ">
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-[#1C1C2E] to-[#2A2B3E] border border-gray-600 rounded-md text-white"
@@ -43,7 +43,7 @@ export default function LanguageSelector() {
       </button>
 
       {open && (
-        <div className="absolute bottom-full mb-2 w-full z-[100] rounded-md shadow-lg bg-[#1C1C2E] border border-gray-700">
+        <div className="absolute top-full mb-2 w-full z-[100] rounded-md shadow-lg bg-[#1C1C2E] border border-gray-700">
           {languages.map((lang) => (
             <button
               key={lang.code}

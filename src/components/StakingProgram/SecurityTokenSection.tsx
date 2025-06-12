@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import { SecurityCard } from "./SecurityCard";
+import { ProgramTitle } from "./ProgramTitle";
 
 export const SecurityTokenSection: React.FC = () => {
   return (
@@ -12,11 +13,11 @@ export const SecurityTokenSection: React.FC = () => {
             text="A share of company profits"
           />
         </div>
-        <div className="ml-5 w-[33%] max-md:ml-0 max-md:w-full h-full ">
-          <h2 className="self-stretch my-auto text-3xl font-bold tracking-wide text-center text-yellow-500 max-md:mt-10">
-            Security Token Offering
-          </h2>
-        </div>
+        <ProgramTitle
+          title="Security Token Offering"
+          colorClass="text-yellow-400"
+        />
+
         <div className="ml-5 w-[33%] max-md:ml-0 max-md:w-full  rounded-3xl">
           <SecurityCard
             imageUrl="/security2.png"

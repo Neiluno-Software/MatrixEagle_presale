@@ -72,10 +72,10 @@ export const TokenomicsSection: React.FC<TokenomicsSectionProps> = ({
         />
       </div>
 
-      <div className="bg-[url('/herobg3.svg')]  bg-no-repeat bg-[length:100%_auto] bg-[center_140px] 2xl:bg-[center_160px] w-full flex justify-center">
+      <div className="bg-[url('/bg3.png')]  bg-no-repeat bg-[length:100%_auto] bg-[center_140px] 2xl:bg-[center_160px] w-full flex justify-center">
         <div className="w-[90%] flex flex-col items-center">
           <TokenomicsImage
-            src="/tokenomicsImage.svg"
+            src="/GRAPH.svg"
             alt="Tokenomics distribution chart"
           />
 
@@ -86,9 +86,7 @@ export const TokenomicsSection: React.FC<TokenomicsSectionProps> = ({
           <div className="flex justify-center">
             <CompanyTagline tagline="Matrix Eagle | Etata: Nourishing Bodies, Empowering Communities, Enriching Investors." />
           </div> */}
-          <div className=" pb-6">
-            <img src={"/Tea.png"} alt={"tea"} />
-          </div>
+          
         </div>
       </div>
     </main>
