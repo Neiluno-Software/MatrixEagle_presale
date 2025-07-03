@@ -19,12 +19,12 @@ export const Footer: React.FC = () => {
         <SocialIcons />
 
         {/* Navigation Links */}
-        <nav className="flex justify-center flex-wrap gap-4 sm:gap-6 2xl:gap-x-22">
+        <nav className="flex justify-center flex-wrap gap-x-9 2xl:gap-x-12">
           {footerLinks.map(({ label, href }) => (
             <a
               key={label}
               href={href}
-              className="text-sm sm:text-base lg:text-lg font-semibold text-[#FFEB31] hover:text-[#FFEB31]/70 transition"
+              className="text-large 2xl:text-[21px] font-semibold text-[#FFEB31] hover:text-[#FFEB31]/70 transition"
             >
               {label}
             </a>

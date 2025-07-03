@@ -19,7 +19,7 @@ export default function AgricultureProblemAndSolution() {
 
         {/* Problems */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 2xl:gap-x-20 mt-6 2xl:mt-8 px-[70px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 2xl:gap-x-20 mt-6 2xl:mt-8 2xl:px-[70px] px-[0px] mb-6 2xl:mb-12">
           {[0, 1].map((i) => (
             <div
               key={i}
@@ -58,11 +58,11 @@ export default function AgricultureProblemAndSolution() {
         </h3>
 
         {/* Solution Points */}
-        <div className="space-y-6 2xl:space-y-12 px-[70px]">
+        <div className="space-y-6 2xl:space-y-12">
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="bg-gradient-to-r from-[#737373]/40 to-black/40 3xl:border-4 2xl:border-2 border border-[#00D962] rounded-2xl sm:rounded-3xl p-6 sm:p-8 2xl:p-9 text-center"
+              className="bg-gradient-to-r from-[#737373]/40 to-black/40 3xl:border-4 2xl:border-2 border border-[#00D962] rounded-2xl sm:rounded-3xl p-6 sm:p-8 2xl:p-9 text-center 2xl:mx-[70px]"
             >
               <p className="text-white text-base sm:text-lg 2xl:text-2xl 3xl:text-3xl font-medium">
                 {t(`agriculture.solution.points.${i}`)}
