@@ -3,7 +3,7 @@ import { Navbar } from "./Navbar/Navbar";
 import { HeroSection } from "./Hero/HeroSection";
 import OurValues from "./OurValues/OurValues";
 import { FAQSection } from "./FAQSection/FAQSection";
-import { Footer } from "./Fotter/Footer";
+import { Footer } from "./Footer/Footer";
 import TokenomicsSection from "./Tokenomics/TokenomicsSection";
 import TeamAndAdvisors from "./TeamAndAdvisor/TeamAndAdvisors";
 

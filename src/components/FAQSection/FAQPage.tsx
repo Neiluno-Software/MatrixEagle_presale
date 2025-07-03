@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FAQSection } from './FAQSection';
-import { Footer } from '../Fotter/Footer';
+import { Footer } from '../Footer/Footer';
 
 export const FAQPage: React.FC = () => {
   return (

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Logo from "../../../public/matrix_eagle_logo.svg";
-import LanguageSelector from "../Fotter/languageSelector";
+import LanguageSelector from "../Footer/languageSelector";
 import { useTranslation } from "react-i18next";
 import NavLinks from "./NavLinks";
 
