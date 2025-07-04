@@ -18,7 +18,7 @@ import TotalSupplySection from "./TotalSupply/TotalSupplySection";
 
 export const MatrixEagleLanding: React.FC = () => {
   return (
-    <div className="w-full 2xl:pr-[50px]">
+    <div className="w-full">
       <div className="w-full">
         <Navbar />
         <div className="flex items-center justify-center w-full">

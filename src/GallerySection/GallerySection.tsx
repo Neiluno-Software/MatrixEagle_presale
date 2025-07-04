@@ -15,7 +15,7 @@ export default function GallerySection() {
   const bottomRowImages = galleryImages.slice(7);
 
   return (
-    <section className="bg-transparent py-10 sm:py-16 px-4 sm:px-6 2xl:pt-[60px] 3xl:pt-[149px]">
+    <section className="bg-transparent py-10 sm:py-16 px-0 2xl:pt-[60px] 3xl:pt-[149px] pl-0 pr-0 ml-0 mr-0">
       <div className="max-w-7xl xl:max-w-full mx-auto">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
