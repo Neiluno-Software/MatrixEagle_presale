@@ -86,15 +86,18 @@ export default function RoadMap() {
               <div className="hidden md:flex mt-10 md:mt-16 lg:mt-32 mb-0 relative grid-cols-3 items-center justify-between gap-2 md:gap-4 2xl:gap-8">
                 {item.direction === "left" ? (
                   <>
-                    <div className="left-[20px] w-[40%] justify-left items-left text-left">
-                      <h2 className="text-lg md:text-xl 2xl:text-[40px] 3xl:text-[60px] font-bold mb-4 text-[#FFEB31]">
-                        {item.quarter}:
-                      </h2>
-                      <ul className="text-sm md:text-base 2xl:text-[24px] 3xl:text-[32px] font-medium space-y-2">
-                        {item.points.map((point, idx) => (
-                          <li key={idx}>• {t(point)}</li>
-                        ))}
-                      </ul>
+                    <div className="left-[20px] w-[40%] justify-right items-left text-left flex">
+                      <div className='flex h-full w-[1%] grow'></div>
+                      <div className='h-full w-full 2xl:w-[350px] 3xl:w-[400px]'>
+                        <h2 className="text-lg md:text-xl 2xl:text-[40px] 3xl:text-[60px] font-bold mb-4 text-[#FFEB31] w-auto">
+                          {item.quarter}:
+                        </h2>
+                        <ul className="text-sm md:text-base 2xl:text-[24px] 3xl:text-[32px] font-medium space-y-2 w-auto">
+                          {item.points.map((point, idx) => (
+                            <li key={idx}>• {t(point)}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
 
                     <div className="flex justify-center items-center">
