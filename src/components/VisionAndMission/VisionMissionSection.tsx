@@ -7,7 +7,7 @@ export default function VisionMissionSection() {
   return (
     <div className="bg-black/26 p-4 md:p-4 md:mt-8 2xl:mt-[70px] 3xl:mt-[280px] px-0 md:px-10 3xl:px-[130px] 2xl:px-[70px]">
       <div className="max-w-7xl 2xl:max-w-[100%] mx-auto">
-        <div className="grid lg:grid-cols-2 2xl:grid-cols-[51%_48%] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 2xl:grid-cols-[51%_48%] gap-12 lg:gap-16 items-top">
           {/* Left side - Vision and Mission content */}
           <div className="bg-[url('/blurredCoin.png')] bg-no-repeat bg-contain bg-center px-4 sm:px-6 lg:px-12 2xl:px-0 py-10 sm:py-14 lg:py-20 ">
             <div className="space-y-8 2xl:space-y-[45px] 3xl:space-y-[40px]">
