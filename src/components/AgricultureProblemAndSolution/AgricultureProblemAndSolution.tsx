@@ -25,7 +25,7 @@ export default function AgricultureProblemAndSolution() {
               key={i}
               className="bg-gradient-to-r from-[#737373]/40 to-black/40 3xl:border-4 2xl:border-2 border border-[#00D962] rounded-2xl sm:rounded-3xl p-6 sm:p-8 2xl:p-5 text-center"
             >
-              <p className="text-white text-base sm:text-lg 2xl:text-2xl 3xl:text-3xl font-medium">
+              <p className="text-white text-base sm:text-lg 2xl:text-[28px] 3xl:text-3xl font-medium">
                 {t(`agriculture.problems.${i}`)}
               </p>
             </div>
@@ -34,7 +34,7 @@ export default function AgricultureProblemAndSolution() {
 
         {/* Additional Problem */}
         <div className="bg-gradient-to-r from-[#737373]/40 to-black/40 3xl:border-4 2xl:border-2 border border-[#00D962] rounded-2xl sm:rounded-3xl p-6 sm:p-8 2xl:p-9 text-center 2xl:mx-[70px]">
-          <p className="text-white text-base sm:text-lg 2xl:text-2xl 3xl:text-3xl font-medium">
+          <p className="text-white text-base sm:text-lg 2xl:text-[28px] 3xl:text-3xl font-medium">
             {t("agriculture.problems.2")}
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function AgricultureProblemAndSolution() {
         {/* Solution Subtitle */}
         <div className="flex justify-center">
 
-        <h3 className="text-center text-white text-base sm:text-xl 2xl:text-2xl 3xl:text-3xl font-medium 2xl:w-[60%]">
+        <h3 className="text-center text-white text-base sm:text-xl 2xl:text-[28px] 3xl:text-3xl font-medium 2xl:w-[60%]">
           {t("agriculture.solution.subtitle")}
         </h3>
         </div>
@@ -64,7 +64,7 @@ export default function AgricultureProblemAndSolution() {
               key={i}
               className="bg-gradient-to-r from-[#737373]/40 to-black/40 3xl:border-4 2xl:border-2 border border-[#00D962] rounded-2xl sm:rounded-3xl p-6 sm:p-8 2xl:p-9 text-center 2xl:mx-[70px]"
             >
-              <p className="text-white text-base sm:text-lg 2xl:text-2xl 3xl:text-3xl font-medium">
+              <p className="text-white text-base sm:text-lg 2xl:text-[28px] 3xl:text-3xl font-medium">
                 {t(`agriculture.solution.points.${i}`)}
               </p>
             </div>

@@ -9,7 +9,7 @@ export const HeroSection: React.FC = () => {
       {/* Title */}
       <h1
         className="
-          mt-0 mb-2 xl:mb-4 lg:mb-11 2xl:mb-10 w-full
+          mt-0 mb-2 xl:mb-6 lg:mb-11 2xl:mb-10 w-full
           text-3xl xl:text-[35px]
           2xl:text-[54px] 2xl:leading-[68px]
           font-semibold
@@ -25,7 +25,7 @@ export const HeroSection: React.FC = () => {
       {/* Description paragraph 1 */}
       <p
         className="
-          mt-0 mb-2 xl:mb-4 2xl:mb-7 leading-normal tracking-normal w-full
+          mt-0 mb-2 xl:mb-6 2xl:mb-7 leading-normal tracking-normal w-full
           text-base text-left text-white
           max-md:text-sm max-sm:text-sm
           xl:text-[18px]
@@ -44,7 +44,7 @@ export const HeroSection: React.FC = () => {
         <p
           className="
             font-light
-            mt-0 mb-2 xl:mb-4 2xl:mb-6 w-full max-w-[1192px]
+            mt-0 mb-2 xl:mb-6 2xl:mb-6 w-full max-w-[1192px]
             text-base text-left text-white tracking-normal
             max-md:text-sm max-md:leading-5 max-sm:text-sm max-sm:leading-5
             xl:text-[18px]

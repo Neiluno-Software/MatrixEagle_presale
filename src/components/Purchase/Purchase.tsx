@@ -26,7 +26,7 @@ export default function Purchase() {
       <div className="relative flex items-center justify-center w-full">
         <div className="w-full bg-transparent rounded-3xl px-4 sm:px-8 md:px-10 2xl:px-[40px] 3xl:px-[70px] py-4 sm:py-10 border border-[#00D962] md:border-2 2xl:border-4 shadow-2xl bg-linear-to-r from-black/21 to-[#737373]/21 2xl:py-[52px]">
           {/* Header */}
-          <div className="text-center mb-4 md:mb-8 2xl:mb-3">
+          <div className="text-center mb-3 md:mb-4 2xl:mb-3">
             <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-[32px] 2xl:text-[45px] 2xl:leading-[33px] font-bold mb-2 md:mb-4">
               <span className="text-white">{t("Purchase.buy")} </span>
               <span className="text-yellow-400">$ETATA </span>
@@ -49,7 +49,7 @@ export default function Purchase() {
           </div>
 
           {/* Stats */}
-          <div className="flex justify-between text-center mb-4 md:mb-8 2xl:mb-5 space-y-2 3xl:space-y-2 text-xs sm:text-base md:text-lg xl:text-[16px] 2xl:text-[22px]">
+          <div className="flex justify-between text-center mb-4 md:mb-5 2xl:mb-5 space-y-2 3xl:space-y-2 text-xs sm:text-base md:text-lg xl:text-[16px] 2xl:text-[22px]">
             <div>
               <span className="text-white">{t("Purchase.usdRaised")} </span>
               <span className="text-green-400 font-bold">$15,000</span>
@@ -62,7 +62,7 @@ export default function Purchase() {
           </div>
 
           {/* Price Info */}
-          <div className="bg-[#73737361] rounded-[10px] p-3 sm:p-4 2xl:py-2 2xl:px-6 mb-4 md:mb-6 xl:mb-3 2xl:mb-5 border border-[#00D962] 2xl:border-2 flex justify-between items-center text-xs sm:text-base md:text-lg xl:text-[18px] 2xl:text-[22px] text-white">
+          <div className="bg-[#73737361] rounded-[10px] p-2 sm:p-3 2xl:py-2 2xl:px-6 mb-4 md:mb-6 xl:mb-3 2xl:mb-5 border border-[#00D962] 2xl:border-2 flex justify-between items-center text-xs sm:text-base md:text-lg xl:text-[18px] 2xl:text-[22px] text-white">
             <div>
               1 <span className="text-[#FFEB31] font-bold">$ETATA</span> = $0.005
             </div>
@@ -70,12 +70,12 @@ export default function Purchase() {
           </div>
 
           {/* Currency Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 2xl:gap-x-[56px] mb-4 md:mb-6 2xl:mb-4">
+          <div className="flex flex-row gap-3 sm:gap-4 2xl:gap-x-[56px] mb-4 md:mb-6 2xl:mb-4">
             {["USDT", "BNB", "USDC"].map((currency) => (
               <button
                 key={currency}
                 onClick={() => setSelectedCurrency(currency)}
-                className={`flex-1 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-[10px] border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${
+                className={`w-1/3 flex-1 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-[10px] border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${
                   selectedCurrency === currency
                     ? "bg-[#00D962] text-black"
                     : "bg-[#73737361] text-white hover:bg-[#d5dfed]"
@@ -96,7 +96,7 @@ export default function Purchase() {
                 type="text"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 md:p-4 2xl:py-3 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
+                className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 2xl:py-3 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm sm:text-base md:text-lg 2xl:text-[20px] text-white">
                 USDT
@@ -108,7 +108,7 @@ export default function Purchase() {
                 value={tokenAmount}
                 onChange={(e) => setTokenAmount(e.target.value)}
                 placeholder="0.00"
-                className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 md:p-4 pr-20 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
+                className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 pr-20 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm sm:text-base md:text-lg 2xl:text-[20px] text-[#FFEB31]">
                 $ETATA
