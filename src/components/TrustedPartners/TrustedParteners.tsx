@@ -26,12 +26,12 @@ const TrustedParteners = () => {
           {TrustedParteners.map((partner, index) => (
             <div
               key={index}
-              className="flex items-center justify-center border border-[#00D962] rounded-xl 2xl:rounded-2xl 2xl:border-2 3xl:rounded-4xl 3xl:border-4 bg-linear-to-r from-black/40 to-[#737373]/20 h-16 sm:h-20 md:h-24 2xl:h-[120px] 2xl:w-[300px] transition-all duration-300"
+              className="flex items-center justify-center border border-[#00D962] rounded-xl 2xl:rounded-2xl 2xl:border-2 3xl:rounded-4xl 3xl:border-4 bg-linear-to-r from-black/40 to-[#737373]/20 h-16 sm:h-20 md:h-24 2xl:h-[120px] 2xl:w-[260px] 3xl:w-[300px] transition-all duration-260"
             >
               <img
                 src={partner}
                 alt={t("trustedPartners.alt", { index: index + 1 })}
-                className="object-contain max-h-full max-w-[70%]"
+                className="object-contain max-h-full max-w-[95%]"
               />
             </div>
           ))}

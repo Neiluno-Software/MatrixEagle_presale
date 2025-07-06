@@ -30,7 +30,7 @@ export const BasicTokenInfo: React.FC<BasicTokenInfoProps> = ({
         {tokenInfo.map((item, index) => (
           <div
             key={index}
-            className="flex items-center justify-center text-center border-r 2xl:border-r-2 3xl:border-r-4 border-[#00D962] last:border-none"
+            className="sm:h-[30px] 2xl:h-[40px] 3xl:h-[50px] flex items-center justify-center text-center border-r-0 sm:border-r 2xl:border-r-2 3xl:border-r-4 border-[#00D962] last:border-none"
           >
             <div className="text-sm sm:text-base 2xl:text-2xl 3xl:text-4xl font-semibold text-white">
               {item.label}:{" "}

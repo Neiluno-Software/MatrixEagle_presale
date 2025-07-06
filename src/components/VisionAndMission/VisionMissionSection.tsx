@@ -36,14 +36,14 @@ export default function VisionMissionSection() {
           </div>
 
           {/* Right side - Circular image */}
-          <div className="hidden lg:flex justify-center lg:justify-end 2xl:justify-center h-full">
-            <div className="relative  w-full flex justify-center">
+          <div className="hidden lg:flex justify-center lg:justify-end 2xl:justify-center h-full px-4 sm:px-6 lg:px-12 2xl:px-0 py-10 sm:py-14 lg:py-20">
+            <div className="relative w-full flex justify-center">
               <div className="overflow-hidden w-full h-full 2xl:max-w-[600px] 3xl:max-w-[900px] 2xl:rounded-6xl border md:border-none 2xl:border-none border-[#00D962] md:rounded-4xl">
                 <div className="h-full">
                   <img
                     src="/vissionmissionImage.png"
                     alt={t("Vision.altVisionImage")}
-                    className="w-full object-contain h-[300px] sm:h-[400px] md:h-auto 2xl:h-full rounded-xl"
+                    className="w-full object-contain h-[300px] sm:h-[400px] md:h-auto 2xl:h-auto rounded-xl"
                   />
                 </div>
               </div>
