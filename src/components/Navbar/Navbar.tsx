@@ -14,7 +14,7 @@ export const Navbar: React.FC = () => {
   const handleConnectWallet = () => console.log("connect wallet");
 
   return (
-    <header className="relative w-full z-50 2xl:px-[70px] 3xl:px-[128px]">
+    <header className="relative w-full z-50 md:px-[50px] 2xl:px-[70px] 3xl:px-[128px]">
       {/* Top Navbar */}
       <div className="flex justify-between items-center w-full px-4 sm:px-6 md:px-8 xl:pt-[60px] 2xl:px-0 2xl:pt-[80px] 3xl:pt-[130px] py-3 h-[64px] sm:h-[72px] md:h-[84px] lg:h-[96px] 2xl:h-[110px]">
         {/* Logo */}
