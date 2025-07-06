@@ -41,10 +41,10 @@ export default function Purchase() {
           </div>
 
           {/* Progress Bar */}
-          <div className="relative rounded-xl mb-4 md:mb-6 xl:mb-3  border bg-[#73737361] border-[#00D962] 2xl:border-2 h-6 2xl:h-[55px]">
+          <div className="relative rounded-[5px] 2xl:rounded-[10px] mb-4 md:mb-6 xl:mb-3  border bg-[#73737361] border-[#00D962] 2xl:border-2 h-10 2xl:h-[55px]">
             <div
-              className="bg-[#00D962] h-full rounded-l-xl rounded-r-sm transition-all duration-500 ease-out"
-              style={{ width: `${progress}%` }}
+              className="bg-[#00D962] h-full rounded-[4px] 2xl:rounded-[7px] transition-all duration-500 ease-out"
+              style={{width: `${progress}%` }}
             ></div>
           </div>
 
@@ -62,7 +62,7 @@ export default function Purchase() {
           </div>
 
           {/* Price Info */}
-          <div className="bg-[#73737361] rounded-xl p-3 sm:p-4 2xl:py-2 2xl:px-6 mb-4 md:mb-6 xl:mb-3 2xl:mb-5 border border-[#00D962] 2xl:border-2 flex justify-between items-center text-xs sm:text-base md:text-lg xl:text-[18px] 2xl:text-[22px] text-white">
+          <div className="bg-[#73737361] rounded-[10px] p-3 sm:p-4 2xl:py-2 2xl:px-6 mb-4 md:mb-6 xl:mb-3 2xl:mb-5 border border-[#00D962] 2xl:border-2 flex justify-between items-center text-xs sm:text-base md:text-lg xl:text-[18px] 2xl:text-[22px] text-white">
             <div>
               1 <span className="text-[#FFEB31] font-bold">$ETATA</span> = $0.005
             </div>
@@ -75,7 +75,7 @@ export default function Purchase() {
               <button
                 key={currency}
                 onClick={() => setSelectedCurrency(currency)}
-                className={`flex-1 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-xl border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${
+                className={`flex-1 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-[10px] border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${
                   selectedCurrency === currency
                     ? "bg-[#00D962] text-black"
                     : "bg-[#73737361] text-white hover:bg-[#d5dfed]"
@@ -96,7 +96,7 @@ export default function Purchase() {
                 type="text"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-xl p-2 sm:p-3 md:p-4 2xl:py-3 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
+                className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 md:p-4 2xl:py-3 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm sm:text-base md:text-lg 2xl:text-[20px] text-white">
                 USDT
@@ -108,7 +108,7 @@ export default function Purchase() {
                 value={tokenAmount}
                 onChange={(e) => setTokenAmount(e.target.value)}
                 placeholder="0.00"
-                className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-xl p-2 sm:p-3 md:p-4 pr-20 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
+                className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 md:p-4 pr-20 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm sm:text-base md:text-lg 2xl:text-[20px] text-[#FFEB31]">
                 $ETATA
@@ -122,7 +122,7 @@ export default function Purchase() {
           </div>
 
           {/* Connect Button */}
-          <button className="w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-xl transition-colors">
+          <button className="w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors">
             {t("Purchase.connectWalletandBuy")} $ETATA
           </button>
         </div>
