@@ -21,7 +21,7 @@ const ImageTicker: React.FC<ImageTickerProps> = ({
   const animationClass = direction === "left" ? "ticker-track-left" : "ticker-track-right";
 
   return (
-    <div className={clsx("relative w-full overflow-hidden bg-linear-to-r from-[#737373]/38 to-black/38 py-4 2xl:pt-[30px] 2xl:pb-[30px] border-[#7FE4FF] border-t-2 border-b-2 2xl:border-t-6 2xl:border-b-6 ", className)}>
+    <div className={clsx("relative w-full overflow-hidden bg-linear-to-r from-[#737373]/38 to-black/38 py-4 2xl:pt-[30px] 2xl:pb-[30px] border-[#00D962] border-t-2 border-b-2 2xl:border-t-6 2xl:border-b-6 ", className)}>
       <div className={clsx("flex w-max", animationClass, "space-x-0 items-center")}>
         {[...images, ...images].map((image, index) => (
           <div
