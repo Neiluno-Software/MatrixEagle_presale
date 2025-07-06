@@ -23,7 +23,7 @@ export default function VisionMissionSection() {
               </div>
 
               {/* Our Mission Section */}
-              <div className="border-2 2xl:border-2  3xl:border-4 border-[#00D962] rounded-3xl p-6 sm:p-8 lg:p-12 bg-black/30 2xl:pb-17">
+              <div className="border-2 2xl:border-2  3xl:border-4 border-[#00D962] rounded-3xl p-6 sm:p-8 lg:p-12 bg-black/30 2xl:pb-12">
                 <h2 className="text-[#FFEB31] text-xl lg:text-2xl 2xl:text-[40px] 3xl:text-[60px] font-bold mb-6 2xl:mb-0">
                   {t("Vision.ourMission")}
                 </h2>
@@ -43,7 +43,7 @@ export default function VisionMissionSection() {
                   <img
                     src="/vissionmissionImage.png"
                     alt={t("Vision.altVisionImage")}
-                    className="w-full object-contain h-[300px] sm:h-[400px] md:h-auto 2xl:h-auto rounded-xl"
+                    className="w-full object-contain h-[300px] sm:h-[400px] md:h-auto 2xl:h-[782px] rounded-xl"
                   />
                 </div>
               </div>
