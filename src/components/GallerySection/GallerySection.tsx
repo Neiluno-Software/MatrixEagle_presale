@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import ImageTicker from "../components/ImageTicker";
+import ImageTicker from "../ImageTicker";
 
 export default function GallerySection() {
   const { t } = useTranslation();

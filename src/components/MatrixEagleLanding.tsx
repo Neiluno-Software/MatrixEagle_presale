@@ -11,7 +11,7 @@ import Purchase from "./Purchase/Purchase";
 import RoadMap from "./RoadMap/Roadmap";
 import AgricultureProblemAndSolution from "./AgricultureProblemAndSolution/AgricultureProblemAndSolution";
 import ContactForm from "./ContactUs/ContactForm";
-import GallerySection from "../GallerySection/GallerySection";
+import GallerySection from "./GallerySection/GallerySection";
 import TrustedParteners from "./TrustedPartners/TrustedParteners";
 import VisionMissionSection from "./VisionAndMission/VisionMissionSection";
 import TotalSupplySection from "./TotalSupply/TotalSupplySection";
