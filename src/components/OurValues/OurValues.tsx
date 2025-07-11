@@ -43,7 +43,7 @@ export default function Component() {
                 </div>
                 <div
                   key={index}
-                  className="bg-linear-to-r from-[#737373]/38 to-black/38 border 2xl:border-2 3xl:border-4 border-[#00D962] rounded-2xl p-2 lg:p-4 2xl:p-6 3xl:p-8 h-full 2xl:min-h-[120px] flex flex-col justify-between"
+                  className="bg-linear-to-r from-[#737373]/38 to-black/38 border 2xl:border-2 3xl:border-4 border-[#00D962] rounded-2xl p-4 lg:p-4 2xl:p-6 3xl:p-8 h-full 2xl:min-h-[120px] flex flex-col justify-between"
                 >
                   <div className="mt-1 2xl:mt-0">
                     <h2 className="text-xl lg:text-2xl 2xl:text-[34px] 3xl:text-[55px] font-bold text-[#FFEB31] mb-1 ">

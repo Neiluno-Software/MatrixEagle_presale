@@ -12,7 +12,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RefreshContextProvider } from './context/RefreshContext'
 
 const config = getDefaultConfig({
-  appName: "USSE",
+  appName: "ETATA",
   projectId: "855e1e89077779023ebffcdb394cf688",
   chains: [
     bsc,
@@ -27,6 +27,9 @@ createRoot(document.getElementById('root')!).render(
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider
+          showRecentTransactions={true}
+          modalSize="compact"
+          initialChain={bsc}
           theme={darkTheme({
             accentColor: '#7b3fe4',
             accentColorForeground: 'white',
