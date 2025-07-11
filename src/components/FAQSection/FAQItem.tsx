@@ -19,7 +19,7 @@ export const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
       <button
         onClick={toggleExpanded}
         aria-expanded={isExpanded}
-        className="flex items-center justify-between w-full px-4 sm:px-6 2xl:px-0 text-left group"
+        className="cursor-pointer flex items-center justify-between w-full px-4 sm:px-6 2xl:px-0 text-left group"
       >
         <h3 className="text-white text-base sm:text-xl 2xl:text-[36px] 3xl:text-5xl font-medium leading-snug group-hover:text-yellow-300 transition">
           {question}

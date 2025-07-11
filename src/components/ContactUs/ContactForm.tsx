@@ -1,8 +1,42 @@
 "use client";
 
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
+
+const axiosPublic = axios.create({
+  baseURL: 'http://localhost:3002/', //Should be changed in deployment progress
+  headers: {
+    "Content-Type": "application/json",
+  },
+  timeout: 10000
+});
+
+const makeEmailData = (email: any, name: any, message: any) => {
+  const subject = 'Email from ' + name + ' to Matrix Eagle';
+  const html = "<b>Email Address</b>: <a href='mailto:" + email + "'>" + email + "</a><br><br>" + 
+               "<b>Message</b>:<br>" + message;
+  return {subject: subject, html: html};
+};
+
+const sendEmail = async (emailData: any) => {
+  try {
+    await axiosPublic.post('/send-email', emailData);
+  }
+  catch (error: any) {
+    console.log(error)
+    throw new Error(error.message);
+  }
+};
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+}
 
 export default function ContactForm() {
   const { t } = useTranslation();
@@ -11,6 +45,8 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
+  const [_errors, setErrors] = useState<FormErrors>({});
+  const [isValid, setIsValid] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,10 +57,36 @@ export default function ContactForm() {
       [name]: value,
     }));
   };
+  
+  useEffect(() => {
+    const _errors: FormErrors = {};
+    if (!formData.name) {
+      _errors.name = 'Name is required';
+    }
+    if (!formData.email || !formData.email.includes('@')) {
+      _errors.email = 'Invalid email';
+    }
+    if (!formData.message) {
+      _errors.message = 'Message is required';
+    }
+    setErrors(_errors);
+    setIsValid(Object.keys(_errors).length === 0);
+  }, [formData.name, formData.email, formData.message]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    if (isValid) {
+      try {
+        await sendEmail(makeEmailData(formData.email, formData.name, formData.message));
+        toast.info('Message has been sent successfully');
+        setFormData({name:'', email:'', message:''});
+      } catch (error: any) {
+        toast.error('Sending message has been failed');
+      }
+    } else {
+      toast.error('Please fill out the form correctly');
+    }
   };
 
   return (
@@ -69,10 +131,11 @@ export default function ContactForm() {
           <div className="flex justify-center pt-4 sm:pt-6 2xl:mt-[48px]">
             <button
               type="submit"
-              className="px-6 sm:px-12 md:px-16 py-3 sm:py-5 text-black font-bold text-sm sm:text-lg md:text-xl xl:text-2xl 2xl:text-[40px] 3xl:text-[59px] bg-[#00D962] border-[#00D962] hover:bg-[#00D962] rounded-3xl transition-colors duration-200 shadow-md focus:outline-none focus:ring-4 focus:ring-[#38b6ff]/50"
+              className="cursor-pointer hover:scale-101 px-6 sm:px-12 md:px-16 py-3 sm:py-5 text-black font-bold text-sm sm:text-lg md:text-xl xl:text-2xl 2xl:text-[40px] 3xl:text-[59px] bg-[#00D962] border-[#00D962] hover:bg-[#00D962] rounded-3xl transition-colors duration-200 shadow-md focus:outline-none focus:ring-4 focus:ring-[#38b6ff]/50"
             >
               {t("contact.submit")}
             </button>
+            <ToastContainer />
           </div>
         </form>
       </div>

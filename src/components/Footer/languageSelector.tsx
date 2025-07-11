@@ -25,7 +25,7 @@ export default function LanguageSelector() {
     <div className="h-full relative text-left mt-2 ">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 pl-1 pr-1 py-[1px] bg-gradient-to-r from-[#1C1C2E] to-[#2A2B3E] border border-gray-600 rounded-md text-white "
+        className="cursor-pointer flex items-center gap-1 pl-1 pr-1 py-[1px] bg-gradient-to-r from-[#1C1C2E] to-[#2A2B3E] border border-gray-600 rounded-md text-white "
       >
         <img src={selected.flag} alt={selected.label} className="w-5 h-5" />
         <span className="text-sm 2xl:text-[12px] 3xl:text-[14px]">

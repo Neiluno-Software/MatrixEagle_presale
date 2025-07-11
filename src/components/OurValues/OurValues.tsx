@@ -37,7 +37,7 @@ export default function Component() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 2xl:gap-x-4 3xl:gap-x-[91px]">
           {values.map((value, index) => {
             return (
-              <div className="relative p-3 2xl:p-0 2xl:w-[370px] 2xl:h-[164px] 3xl:w-[550px] 3xl:h-[252px]">
+              <div key={index} className="relative p-3 2xl:p-0 2xl:w-[370px] 2xl:h-[164px] 3xl:w-[550px] 3xl:h-[252px]">
                 <div className="absolute 2xl:-top-8  2xl:-right-8 3xl:-top-10 -top-1.5 3xl:-right-12 -right-1.5 bg-[#00D962]  rounded-md md:rounded-xl 3xl:rounded-4xl z-20 h-[40px] w-[40px] md:h-[45px] md:w-[45px] 2xl:h-[80px] 2xl:w-[80px] 3xl:h-[120px] 3xl:w-[120px] ">
                   <img src={value.image} alt="image" />
                 </div>
