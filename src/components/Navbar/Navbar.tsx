@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import NavLinks from "./NavLinks";
 
 import { useConnectModal, useChainModal, useAccountModal } from "@rainbow-me/rainbowkit";
-import { useChainId, useAccount, useBalance, useReadContract, useWriteContract } from "wagmi";
+import { useAccount } from "wagmi";
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -17,7 +17,6 @@ export const Navbar: React.FC = () => {
   const handleConnectWallet = () => console.log("connect wallet");
 
   const { openConnectModal } = useConnectModal();
-  const { openChainModal } = useChainModal();
   const { openAccountModal } = useAccountModal();
   const { address, isConnected } = useAccount();
 
