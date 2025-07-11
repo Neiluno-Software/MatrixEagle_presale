@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   const { t } = useTranslation();
 
   const footerLinks = [
-    { label: t("footer.whitepaper"), href: "#" },
+    { label: t("footer.whitepaper"), href: "/Whitepaper Matrix Eagle (Etata).pdf" },
     { label: t("footer.howToBuy"), href: "#" },
   ];
 
@@ -24,6 +24,7 @@ export const Footer: React.FC = () => {
             <a
               key={label}
               href={href}
+              target="_blank"
               className="text-large 2xl:text-[21px] font-semibold text-[#FFEB31] hover:text-[#FFEB31]/70 transition"
             >
               {label}
