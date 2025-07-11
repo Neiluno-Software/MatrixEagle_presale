@@ -1,13 +1,373 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useTranslation } from "react-i18next";
 
+import { useConnectModal } from "@rainbow-me/rainbowkit";
+import { useChainId, useAccount, useReadContract, useWriteContract, useBalance } from "wagmi";
+import { ethers } from 'ethers';
+import {
+  TOKEN_ADDRESS_MAIN,
+  TOKEN_ADDRESS_TEST,
+  USDT_ADDRESS_MAIN,
+  USDT_ADDRESS_TEST,
+  USDC_ADDRESS_MAIN,
+  USDC_ADDRESS_TEST,
+  PRESALE_ADDRESS_MAIN,
+  PRESALE_ADDRESS_TEST,
+  MAIN_NET,
+} from "../../config";
+import PRESALE_ABI from '../../config/abis/PRESALE_ABI.json';
+import TOKEN_ABI from '../../config/abis/USDT_ABI.json';
+import USDT_ABI from '../../config/abis/USDT_ABI.json';
+import USDC_ABI from '../../config/abis/USDT_ABI.json';
+import { RefreshContext } from '../../context/RefreshContext'
+
+const useRefresh = () => {
+  const { fast, slow } = useContext(RefreshContext)
+  return { fastRefresh: fast, slowRefresh: slow }
+}
+
 export default function Purchase() {
+  const { slowRefresh } = useRefresh();
+
   const { t } = useTranslation();
+
+  const { openConnectModal } = useConnectModal();
+  const chainId = useChainId();
+  const { isConnected, address } = useAccount();
+  const { data: balance, refetch: refetchBalance } = useBalance({ address: address });
+  const { writeContractAsync } = useWriteContract();
+
+  ////// Presale Contract ////////////////////////
+  const { data: phase, refetch: refetchPhase } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'phase',
+    args: [],
+    chainId: chainId
+  });
+
+  const { data: tokenPrice, refetch: refetchTokenPrice } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'getCurrentTokenPrice',
+    args: [],
+    chainId: chainId
+  });
+
+  const { data: nextPrice, refetch: refetchNextPrice } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'getTokenPriceByPhase',
+    args: [parseInt(phase) + 1],
+    chainId: chainId
+  });
+
+  const { data: tokenInCurrentPhase, refetch: refetchTokenInCurrentPhase } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'tokenInCurrentPhase',
+    args: [],
+    chainId: chainId
+  });
+
+  const { data: targetAmountForCurrentPhase, refetch: refetchTargetAmountForCurrentPhase } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'getTokenAmountByPhase',
+    args: [phase],
+    chainId: chainId
+  });
+
+  const { data: totalUSD, refetch: refetchTotalUSD } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'getTotalRaisedUSD',
+    args: [],
+    chainId: chainId
+  });
+
+  const { data: tokenTotal, refetch: refetchTokenTotal } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'tokenTotal',
+    args: [],
+    chainId: chainId
+  });
+
+  const { data: bnbPrice, refetch: refetchBnbPrice } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'getLatestBNBPrice',
+    args: [],
+    chainId: chainId
+  })
+
+  const { data: startTime, refetch: refetchStartTime } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'startTime',
+    args: [],
+    chainId: chainId
+  })
+
+  const { data: phaseDuration, refetch: refetchPhaseDuration } = useReadContract({
+    address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+    abi: PRESALE_ABI,
+    functionName: 'phaseDuration',
+    args: [],
+    chainId: chainId
+  })
+
+  /////// USDT Contract //////////////////////////////////////
+  const { data: balanceUSDT, refetch: refetchBalanceUSDT } = useReadContract({
+    address: chainId === MAIN_NET ? USDT_ADDRESS_MAIN : USDT_ADDRESS_TEST,
+    abi: USDT_ABI,
+    functionName: 'balanceOf',
+    args: [address],
+    chainId: chainId
+  });
+
+  const { data: approvedAmountUSDT, refetch: refetchApprovedAmountUSDT } = useReadContract({
+    address: chainId === MAIN_NET ? USDT_ADDRESS_MAIN : USDT_ADDRESS_TEST,
+    abi: USDT_ABI,
+    functionName: 'allowance',
+    args: [address, chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST],
+    chainId: chainId
+  });
+
+  /////// USDC Contract //////////////////////////////////////
+  const { data: balanceUSDC, refetch: refetchBalanceUSDC } = useReadContract({
+    address: chainId === MAIN_NET ? USDC_ADDRESS_MAIN : USDC_ADDRESS_TEST,
+    abi: USDT_ABI,
+    functionName: 'balanceOf',
+    args: [address],
+    chainId: chainId
+  });
+
+  const { data: approvedAmountUSDC, refetch: refetchApprovedAmountUSDC } = useReadContract({
+    address: chainId === MAIN_NET ? USDC_ADDRESS_MAIN : USDC_ADDRESS_TEST,
+    abi: USDT_ABI,
+    functionName: 'allowance',
+    args: [address, chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST],
+    chainId: chainId
+  });
+
+  ////// Token Contract //////////////////////////////////////
+  const { data: balanceToken, refetch: refetchBalanceToken } = useReadContract({
+    address: chainId === MAIN_NET ? TOKEN_ADDRESS_MAIN : TOKEN_ADDRESS_TEST,
+    abi: TOKEN_ABI,
+    functionName: 'balanceOf',
+    args: [address],
+    chainId: chainId
+  });
+
+  useEffect(() => {
+    refetchApprovedAmountUSDT();
+    refetchApprovedAmountUSDC();
+    refetchBalance();
+    refetchBalanceToken();
+    refetchBalanceUSDT();
+    refetchBnbPrice();
+    refetchNextPrice();
+    refetchPhase();
+    refetchStartTime();
+    refetchTokenInCurrentPhase();
+    refetchTokenPrice();
+    refetchTokenTotal();
+    refetchTotalUSD();
+    refetchTargetAmountForCurrentPhase();
+    refetchPhaseDuration();
+  }, [slowRefresh])
+
+  const [payKind, setPayKind] = useState(0);
+  const [payKindString, setPayKindString] = useState('ETH you pay');
   const [selectedCurrency, setSelectedCurrency] = useState("USDT");
-  const [amount, setAmount] = useState("5");
-  const [tokenAmount, setTokenAmount] = useState("20,000");
-  const [progress] = useState(40);
+
+  const [payAmount, setPayAmount] = useState(0);
+  const [expectationTokenAmount, setExpectationTokenAmount] = useState(0);
+
+  const [progress, setProgress] = useState(0);
+
+  const [countdownTime, setCountdownTime] = useState(0);
+
+  const [isApproving, setIsApproving] = useState(false);
+  const [isPaying, setIsPaying] = useState(false);
+
+  useEffect(() => {
+    if (tokenInCurrentPhase !== undefined && targetAmountForCurrentPhase) {
+      setProgress(parseFloat(ethers.formatUnits(tokenInCurrentPhase, 18)) / parseFloat(ethers.formatUnits(targetAmountForCurrentPhase.toString(), 18)) * 100);
+      console.log("eagle progress = ", parseFloat(ethers.formatUnits(tokenInCurrentPhase, 18)) / parseFloat(ethers.formatUnits(targetAmountForCurrentPhase.toString(), 18)) * 100)
+    }
+  }, [tokenInCurrentPhase, targetAmountForCurrentPhase]);
+
+  const handleClick = (index) => {
+    if (index === payKind)
+      return;
+
+    setPayKind(index);
+    if (index === 0) {
+      setPayKindString('USDT you pay');
+      setSelectedCurrency('USDT');
+    } else if (index === 1) {
+      setPayKindString('BNB you pay');
+      setSelectedCurrency('BNB');
+    } else if (index === 2) {
+      setPayKindString('USDC you pay');
+      setSelectedCurrency('USDC');
+    }
+
+    setPayAmount(0);
+    setExpectationTokenAmount(0);
+  };
+
+  const handleChange = (e: any) => {
+    setPayAmount(e.target.value);
+
+    if (payKind === 0)
+      setExpectationTokenAmount(e.target.value / parseFloat(ethers.formatUnits(tokenPrice ? tokenPrice.toString() : "1", 8)));
+    else if (payKind === 1)
+      setExpectationTokenAmount(e.target.value * parseFloat(ethers.formatUnits(bnbPrice ? bnbPrice.toString() : "0", 8)) / parseFloat(ethers.formatUnits(tokenPrice ? tokenPrice.toString() : "1", 8)));
+    else
+      setExpectationTokenAmount(e.target.value / parseFloat(ethers.formatUnits(tokenPrice ? tokenPrice.toString() : "1", 8)));
+  }
+
+  const getBuyButtonText = () => {
+    if (payAmount === 0)
+      return 'Enter Amount';
+
+    if (isPaying)
+      return 'Paying ...';
+
+    if (payKind === 0)
+      if (isApproving)
+        return 'Approving ...';
+      else if (parseFloat(ethers.formatUnits(balanceUSDT ? balanceUSDT : "0", 18)) <= payAmount)
+        return 'Insufficient Balance';
+      else if (parseFloat(ethers.formatUnits(approvedAmountUSDT ? approvedAmountUSDT : "0", 18)) < payAmount)
+        return 'Approve USDT';
+      else
+        return 'Pay with USDT';
+    else if (payKind === 1) {
+      if (parseFloat(balance.formatted) <= payAmount)
+        return 'Insufficient Balance';
+      else
+        return 'Pay with BNB';
+    }
+    else if (payKind === 2) {
+      if (isApproving)
+        return 'Approving ...';
+      else if (parseFloat(ethers.formatUnits(balanceUSDC ? balanceUSDC : "0", 18)) <= payAmount)
+        return 'Insufficient Balance';
+      else if (parseFloat(ethers.formatUnits(approvedAmountUSDC ? approvedAmountUSDC : "0", 18)) < payAmount)
+        return 'Approve USDC';
+      else
+        return 'Pay with USDC';
+    }
+  }
+
+  const handleBuy = async () => {
+    if (payAmount === 0)
+      return;
+
+    if (payKind === 0) {
+      if (parseFloat(ethers.formatUnits(balanceUSDT ? balanceUSDT : "0", 18)) <= payAmount)
+        return;
+
+      if (parseFloat(ethers.formatUnits(approvedAmountUSDT ? approvedAmountUSDT : "0", 18)) < payAmount) {
+        setIsApproving(true);
+        await writeContractAsync({
+          address: chainId === MAIN_NET ? USDT_ADDRESS_MAIN : USDT_ADDRESS_TEST,
+          abi: USDT_ABI,
+          functionName: "approve",
+          args: [chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST, ethers.parseUnits(payAmount.toString(), 18)]
+        })
+          .then(() => {
+            refetchApprovedAmountUSDT();
+            setIsApproving(false);
+          })
+          .catch((err) => {
+            console.log(err);
+            setIsApproving(false);
+          });
+        return;
+      }
+
+      setIsPaying(true);
+      await writeContractAsync({
+        address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+        abi: PRESALE_ABI,
+        functionName: "buyTokenByUSDT",
+        args: [["0x0000000000000000000000000000000000000000000000000000000000000000"], ethers.parseUnits(payAmount.toString(), 18)]
+      })
+        .then(() => {
+          setIsPaying(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsPaying(false);
+        });
+    } else if (payKind === 1) {
+      if (parseFloat(balance.formatted) <= payAmount)
+        return;
+
+      setIsPaying(true);
+      await writeContractAsync({
+        address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+        abi: PRESALE_ABI,
+        functionName: "buyTokenByBNB",
+        args: [["0x0000000000000000000000000000000000000000000000000000000000000000"]],
+        value: ethers.parseEther(payAmount.toString())
+      })
+        .then(() => {
+          setIsPaying(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsPaying(false);
+        });
+
+    } else if (payKind === 2) {
+      if (parseFloat(ethers.formatUnits(balanceUSDC ? balanceUSDC : "0", 18)) <= payAmount)
+        return;
+
+      if (parseFloat(ethers.formatUnits(approvedAmountUSDC ? approvedAmountUSDC : "0", 18)) < payAmount) {
+        setIsApproving(true);
+        await writeContractAsync({
+          address: chainId === MAIN_NET ? USDC_ADDRESS_MAIN : USDC_ADDRESS_TEST,
+          abi: USDC_ABI,
+          functionName: "approve",
+          args: [chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST, ethers.parseUnits(payAmount.toString(), 18)]
+        })
+          .then(() => {
+            refetchApprovedAmountUSDC();
+            setIsApproving(false);
+          })
+          .catch((err) => {
+            console.log(err);
+            setIsApproving(false);
+          });
+        return;
+      }
+
+      setIsPaying(true);
+      await writeContractAsync({
+        address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
+        abi: PRESALE_ABI,
+        functionName: "buyTokenByUSDC",
+        args: [["0x0000000000000000000000000000000000000000000000000000000000000000"], ethers.parseUnits(payAmount.toString(), 18)]
+      })
+        .then(() => {
+          setIsPaying(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsPaying(false);
+        });
+    }
+  }
+
+
 
   return (
     <div className="relative md:min-w-[480px] lg:min-w-[530px] 2xl:max-w-[1000px] w-full mx-auto px-2">
@@ -44,7 +404,7 @@ export default function Purchase() {
           <div className="relative rounded-[5px] 2xl:rounded-[10px] mb-4 md:mb-6 xl:mb-3  border bg-[#73737361] border-[#00D962] 2xl:border-2 h-10 2xl:h-[55px]">
             <div
               className="bg-[#00D962] h-full rounded-[4px] 2xl:rounded-[7px] transition-all duration-500 ease-out"
-              style={{width: `${progress}%` }}
+              style={{ width: `${progress}%` }}
             ></div>
           </div>
 
@@ -52,34 +412,33 @@ export default function Purchase() {
           <div className="flex justify-between text-center mb-4 md:mb-5 2xl:mb-5 space-y-2 3xl:space-y-2 text-xs sm:text-base md:text-lg xl:text-[16px] 2xl:text-[22px]">
             <div>
               <span className="text-white">{t("Purchase.usdRaised")} </span>
-              <span className="text-green-400 font-bold">$15,000</span>
+              <span className="text-green-400 font-bold">${parseFloat(ethers.formatUnits(totalUSD ? totalUSD.toString() : "0", "ether")).toFixed(2)}</span>
             </div>
             <div className="text-white">
               <span>{t("Purchase.tokens")} </span>
               <span className="text-green-400 font-semibold">{t("Purchase.sold")}</span>
-              <span>: 150,000,000</span>
+              <span>: {parseFloat(ethers.formatUnits(tokenTotal ? tokenTotal.toString() : "0", "ether")).toFixed(2)}</span>
             </div>
           </div>
 
           {/* Price Info */}
           <div className="bg-[#73737361] rounded-[10px] p-2 sm:p-3 2xl:py-2 2xl:px-6 mb-4 md:mb-6 xl:mb-3 2xl:mb-5 border border-[#00D962] 2xl:border-2 flex justify-between items-center text-xs sm:text-base md:text-lg xl:text-[18px] 2xl:text-[22px] text-white">
             <div>
-              1 <span className="text-[#FFEB31] font-bold">$ETATA</span> = $0.005
+              1 <span className="text-[#FFEB31] font-bold">$ETATA</span> = ${ethers.formatUnits(tokenPrice ? tokenPrice : "0", 8)}
             </div>
-            <div>Next Price: $0.6</div>
+            <div>Next Price: ${ethers.formatUnits(nextPrice ? nextPrice : "0", 8)}</div>
           </div>
 
           {/* Currency Buttons */}
           <div className="flex flex-row gap-3 sm:gap-4 2xl:gap-x-[56px] mb-4 md:mb-6 2xl:mb-4">
-            {["USDT", "BNB", "USDC"].map((currency) => (
+            {["USDT", "BNB", "USDC"].map((currency, index) => (
               <button
                 key={currency}
-                onClick={() => setSelectedCurrency(currency)}
-                className={`w-1/3 flex-1 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-[10px] border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${
-                  selectedCurrency === currency
-                    ? "bg-[#00D962] text-black"
-                    : "bg-[#73737361] text-white hover:bg-[#d5dfed]"
-                }`}
+                onClick={() => handleClick(index)}
+                className={`w-1/3 flex-1 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-[10px] border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${payKind === index
+                  ? "bg-[#00D962] text-black"
+                  : "bg-[#73737361] text-white hover:bg-[#d5dfed]"
+                  }`}
               >
                 {currency}
               </button>
@@ -94,19 +453,19 @@ export default function Purchase() {
             <div className="w-full sm:w-1/2 relative">
               <input
                 type="text"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                value={payAmount}
+                onChange={handleChange}
                 className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 2xl:py-3 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm sm:text-base md:text-lg 2xl:text-[20px] text-white">
-                USDT
+                {selectedCurrency}
               </span>
             </div>
             <div className="w-full sm:w-1/2 relative">
               <input
-                type="text"
-                value={tokenAmount}
-                onChange={(e) => setTokenAmount(e.target.value)}
+                type="number"
+                value={expectationTokenAmount.toFixed(0)}
+                disabled={true}
                 placeholder="0.00"
                 className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 pr-20 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
               />
@@ -122,9 +481,22 @@ export default function Purchase() {
           </div>
 
           {/* Connect Button */}
-          <button className="w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors">
-            {t("Purchase.connectWalletandBuy")} $ETATA
-          </button>
+          {
+            isConnected ?
+              <button
+                className="w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
+                onClick={handleBuy}
+              >
+                {getBuyButtonText()}
+              </button>
+              :
+              <button
+                className="w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
+                onClick={openConnectModal}
+              >
+                {t("Purchase.connectWalletandBuy")} $ETATA
+              </button>
+          }
         </div>
       </div>
     </div>

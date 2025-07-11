@@ -6,12 +6,20 @@ import LanguageSelector from "../Footer/languageSelector";
 import { useTranslation } from "react-i18next";
 import NavLinks from "./NavLinks";
 
+import { useConnectModal, useChainModal, useAccountModal } from "@rainbow-me/rainbowkit";
+import { useChainId, useAccount, useBalance, useReadContract, useWriteContract } from "wagmi";
+
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { t } = useTranslation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const handleConnectWallet = () => console.log("connect wallet");
+
+  const { openConnectModal } = useConnectModal();
+  const { openChainModal } = useChainModal();
+  const { openAccountModal } = useAccountModal();
+  const { address, isConnected } = useAccount();
 
   return (
     <header className="relative w-full z-50 md:px-[50px] 2xl:px-[70px] 3xl:px-[128px]">
@@ -38,14 +46,26 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Button */}
-            <div className="p-[2px] 2xl:p-1 rounded-lg bg-[radial-gradient(circle_at_top_left,_#FFFAEB,_#FFEB31)]">
-              <button
-                onClick={handleConnectWallet}
-                className={`px-4 sm:px-5 md:px-6 border-white py-1 sm:py-2 rounded-lg text-black text-xs sm:text-sm md:text-base xl:text-[14px] 2xl:text-[18px] bg-gradient-to-br from-[#00D962] to-[#FFEB31] font-bold hover:opacity-80`}
-              >
-                {t("connectWallet")}
-              </button>
-            </div>
+            {
+              isConnected ?
+                <div className="p-[2px] 2xl:p-1 rounded-lg bg-[radial-gradient(circle_at_top_left,_#FFFAEB,_#FFEB31)]">
+                  <button
+                    onClick={openAccountModal}
+                    className={`px-4 sm:px-5 md:px-6 border-white py-1 sm:py-2 rounded-lg text-black text-xs sm:text-sm md:text-base xl:text-[14px] 2xl:text-[18px] bg-gradient-to-br from-[#00D962] to-[#FFEB31] font-bold hover:opacity-80`}
+                  >
+                    {address?.substring(0, 7) + "..." + address?.substring(37, 42)}
+                  </button>
+                </div>
+                :
+                <div className="p-[2px] 2xl:p-1 rounded-lg bg-[radial-gradient(circle_at_top_left,_#FFFAEB,_#FFEB31)]">
+                  <button
+                    onClick={openConnectModal}
+                    className={`px-4 sm:px-5 md:px-6 border-white py-1 sm:py-2 rounded-lg text-black text-xs sm:text-sm md:text-base xl:text-[14px] 2xl:text-[18px] bg-gradient-to-br from-[#00D962] to-[#FFEB31] font-bold hover:opacity-80`}
+                  >
+                    {t("connectWallet")}
+                  </button>
+                </div>
+            }
           </div>
         </div>
 
