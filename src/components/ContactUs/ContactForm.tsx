@@ -6,9 +6,12 @@ import { useTranslation } from "react-i18next";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import {
+  BACKEND_BASE_URL
+} from "../../config";
 
 const axiosPublic = axios.create({
-  baseURL: 'http://localhost:3002/', //Should be changed in deployment progress
+  baseURL: BACKEND_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
