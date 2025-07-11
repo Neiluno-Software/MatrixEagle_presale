@@ -25,7 +25,7 @@ export const BasicTokenInfo: React.FC<BasicTokenInfoProps> = ({
   ];
 
   return (
-    <section className="w-full mt-10 2xl:mt-20 rounded-3xl 3xl:border-4 2xl:border-2 border border-[#00D962] bg-gradient-to-r from-[#737373]/40 to-black/40 p-6 sm:p-10 2xl:p-13 3xl:p-14">
+    <section className="w-full mt-10 2xl:mt-20 rounded-3xl 3xl:border-4 2xl:border-2 border border-[#00D962] bg-gradient-to-r from-[#737373]/40 to-black/40 p-6 sm:p-10 sm:pr-6 sm:pl-6 2xl:p-14 2xl:pr-8 2xl:pl-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {tokenInfo.map((item, index) => (
           <div
