@@ -45,7 +45,8 @@ export default function Purchase() {
     functionName: 'phase',
     args: [],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
+
 
   const { data: tokenPrice, refetch: refetchTokenPrice } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
@@ -53,7 +54,7 @@ export default function Purchase() {
     functionName: 'getCurrentTokenPrice',
     args: [],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   const { data: nextPrice, refetch: refetchNextPrice } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
@@ -61,7 +62,7 @@ export default function Purchase() {
     functionName: 'getTokenPriceByPhase',
     args: [parseInt(phase) + 1],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   const { data: tokenInCurrentPhase, refetch: refetchTokenInCurrentPhase } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
@@ -69,7 +70,7 @@ export default function Purchase() {
     functionName: 'tokenInCurrentPhase',
     args: [],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   const { data: targetAmountForCurrentPhase, refetch: refetchTargetAmountForCurrentPhase } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
@@ -77,7 +78,7 @@ export default function Purchase() {
     functionName: 'getTokenAmountByPhase',
     args: [phase],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   const { data: totalUSD, refetch: refetchTotalUSD } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
@@ -85,7 +86,7 @@ export default function Purchase() {
     functionName: 'getTotalRaisedUSD',
     args: [],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   const { data: tokenTotal, refetch: refetchTokenTotal } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
@@ -93,7 +94,7 @@ export default function Purchase() {
     functionName: 'tokenTotal',
     args: [],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   const { data: bnbPrice, refetch: refetchBnbPrice } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
@@ -101,23 +102,23 @@ export default function Purchase() {
     functionName: 'getLatestBNBPrice',
     args: [],
     chainId: chainId
-  })
+  }) as { data: any; refetch: () => void };
 
-  const { data: startTime, refetch: refetchStartTime } = useReadContract({
+  const { data: _startTime, refetch: refetchStartTime } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
     abi: PRESALE_ABI,
     functionName: 'startTime',
     args: [],
     chainId: chainId
-  })
+  }) as { data: any; refetch: () => void };
 
-  const { data: phaseDuration, refetch: refetchPhaseDuration } = useReadContract({
+  const { data: _phaseDuration, refetch: refetchPhaseDuration } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
     abi: PRESALE_ABI,
     functionName: 'phaseDuration',
     args: [],
     chainId: chainId
-  })
+  }) as { data: any; refetch: () => void };
 
   /////// USDT Contract //////////////////////////////////////
   const { data: balanceUSDT, refetch: refetchBalanceUSDT } = useReadContract({
@@ -126,7 +127,7 @@ export default function Purchase() {
     functionName: 'balanceOf',
     args: [address],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   const { data: approvedAmountUSDT, refetch: refetchApprovedAmountUSDT } = useReadContract({
     address: chainId === MAIN_NET ? USDT_ADDRESS_MAIN : USDT_ADDRESS_TEST,
@@ -134,16 +135,16 @@ export default function Purchase() {
     functionName: 'allowance',
     args: [address, chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   /////// USDC Contract //////////////////////////////////////
-  const { data: balanceUSDC, refetch: refetchBalanceUSDC } = useReadContract({
+  const { data: balanceUSDC, refetch: _refetchBalanceUSDC } = useReadContract({
     address: chainId === MAIN_NET ? USDC_ADDRESS_MAIN : USDC_ADDRESS_TEST,
     abi: USDT_ABI,
     functionName: 'balanceOf',
     args: [address],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   const { data: approvedAmountUSDC, refetch: refetchApprovedAmountUSDC } = useReadContract({
     address: chainId === MAIN_NET ? USDC_ADDRESS_MAIN : USDC_ADDRESS_TEST,
@@ -151,16 +152,16 @@ export default function Purchase() {
     functionName: 'allowance',
     args: [address, chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   ////// Token Contract //////////////////////////////////////
-  const { data: balanceToken, refetch: refetchBalanceToken } = useReadContract({
+  const { data: _balanceToken, refetch: refetchBalanceToken } = useReadContract({
     address: chainId === MAIN_NET ? TOKEN_ADDRESS_MAIN : TOKEN_ADDRESS_TEST,
     abi: TOKEN_ABI,
     functionName: 'balanceOf',
     args: [address],
     chainId: chainId
-  });
+  }) as { data: any; refetch: () => void };
 
   useEffect(() => {
     refetchApprovedAmountUSDT();
@@ -181,7 +182,7 @@ export default function Purchase() {
   }, [slowRefresh])
 
   const [payKind, setPayKind] = useState(0);
-  const [payKindString, setPayKindString] = useState('ETH you pay');
+  const [_payKindString, setPayKindString] = useState('ETH you pay');
   const [selectedCurrency, setSelectedCurrency] = useState("USDT");
 
   const [payAmount, setPayAmount] = useState(0);
@@ -189,7 +190,7 @@ export default function Purchase() {
 
   const [progress, setProgress] = useState(0);
 
-  const [countdownTime, setCountdownTime] = useState(0);
+  //const [_countdownTime, setCountdownTime] = useState(0);
 
   const [isApproving, setIsApproving] = useState(false);
   const [isPaying, setIsPaying] = useState(false);
@@ -201,7 +202,7 @@ export default function Purchase() {
     }
   }, [tokenInCurrentPhase, targetAmountForCurrentPhase]);
 
-  const handleClick = (index) => {
+  const handleClick = (index: any) => {
     if (index === payKind)
       return;
 
@@ -249,7 +250,7 @@ export default function Purchase() {
       else
         return 'Pay with USDT';
     else if (payKind === 1) {
-      if (parseFloat(balance.formatted) <= payAmount)
+      if (balance?.formatted && parseFloat(balance.formatted) <= payAmount)
         return 'Insufficient Balance';
       else
         return 'Pay with BNB';
@@ -308,7 +309,7 @@ export default function Purchase() {
           setIsPaying(false);
         });
     } else if (payKind === 1) {
-      if (parseFloat(balance.formatted) <= payAmount)
+      if (balance?.formatted &&parseFloat(balance.formatted) <= payAmount)
         return;
 
       setIsPaying(true);

@@ -6,7 +6,7 @@ import LanguageSelector from "../Footer/languageSelector";
 import { useTranslation } from "react-i18next";
 import NavLinks from "./NavLinks";
 
-import { useConnectModal, useChainModal, useAccountModal } from "@rainbow-me/rainbowkit";
+import { useConnectModal, useAccountModal } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
 
 export const Navbar: React.FC = () => {
