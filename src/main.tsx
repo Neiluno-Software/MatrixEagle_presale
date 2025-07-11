@@ -15,7 +15,7 @@ const config = getDefaultConfig({
   appName: "USSE",
   projectId: "855e1e89077779023ebffcdb394cf688",
   chains: [
-    // mainnet,
+    bsc,
     bscTestnet,
   ],
 });
