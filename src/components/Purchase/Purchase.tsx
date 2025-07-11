@@ -436,7 +436,7 @@ export default function Purchase() {
               <button
                 key={currency}
                 onClick={() => handleClick(index)}
-                className={`w-1/3 flex-1 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-[10px] border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${payKind === index
+                className={`cursor-pointer w-1/3 flex-1 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-[10px] border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${payKind === index
                   ? "bg-[#00D962] text-black"
                   : "bg-[#73737361] text-white hover:bg-[#d5dfed]"
                   }`}
@@ -485,14 +485,14 @@ export default function Purchase() {
           {
             isConnected ?
               <button
-                className="w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
+                className="cursor-pointer w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
                 onClick={handleBuy}
               >
                 {getBuyButtonText()}
               </button>
               :
               <button
-                className="w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
+                className="cursor-pointer w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
                 onClick={openConnectModal}
               >
                 {t("Purchase.connectWalletandBuy")} $ETATA
