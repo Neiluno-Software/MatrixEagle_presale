@@ -51,7 +51,7 @@ export const TokenomicsSection: React.FC<TokenomicsSectionProps> = ({
   return (
     <main className="flex flex-col justify-center rounded-[29px] w-[88%]  2xl:w-full items-center  3xl:mt-[94px] px-0 md:px-10 2xl:px-[130px] ">
       <div className=" w-full flex justify-center">
-        <div className="p-4 w-[90%] 2xl:w-[90%] 3xl:w-[90%]">
+        <div id='tokenomics' className="p-4 w-[90%] 2xl:w-[90%] 3xl:w-[90%]">
 
         <TokenomicsHeader title={t("tokenomics.title")} />
 

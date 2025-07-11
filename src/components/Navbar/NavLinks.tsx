@@ -3,11 +3,11 @@ import { useTranslation } from "react-i18next";
 const NavLinks = () => {
   const { t } = useTranslation();
   const navItems = [
-    { key: "dashboard", link: "#dashboard" },
     { key: "whitepaper", link: "#whitepaper" },
     { key: "tokenomicsNav", link: "#tokenomics" },
     { key: "roadmapNav", link: "#roadmap" },
-    { key: "About", link: "#about" },
+    { key: "contactUs", link: "#contactUs" },
+    { key: "FAQ", link: "#faq" },
   ];
   return (
     <div className="flex flex-col lg:flex-row gap-x-2 lg:gap-x-4 xl:gap-x-6 2xl:gap-x-8 3xl:gap-x-10">

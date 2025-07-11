@@ -6,13 +6,13 @@ import ImageTicker from "../ImageTicker";
 export default function GallerySection() {
   const { t } = useTranslation();
 
-  const galleryImages = Array.from({ length: 13 }, (_, index) => ({
+  const galleryImages = Array.from({ length: 24 }, (_, index) => ({
     src: `/galleryImages/gallery${index + 1}.png`,
     alt: t(`gallery.alt.${index}`),
   }));
 
-  const topRowImages = galleryImages.slice(0, 7);
-  const bottomRowImages = galleryImages.slice(7);
+  const topRowImages = galleryImages.slice(0, 12);
+  const bottomRowImages = galleryImages.slice(12);
 
   return (
     <section className="bg-transparent py-10 sm:py-16 px-0 2xl:pt-[60px] 3xl:pt-[149px] pl-0 pr-0 ml-0 mr-0">

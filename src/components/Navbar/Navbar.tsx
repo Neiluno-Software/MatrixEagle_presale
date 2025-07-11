@@ -50,7 +50,7 @@ export const Navbar: React.FC = () => {
                 <div className="p-[2px] 2xl:p-1 rounded-lg bg-[radial-gradient(circle_at_top_left,_#FFFAEB,_#FFEB31)]">
                   <button
                     onClick={openAccountModal}
-                    className={`px-4 sm:px-5 md:px-6 border-white py-1 sm:py-2 rounded-lg text-black text-xs sm:text-sm md:text-base xl:text-[14px] 2xl:text-[18px] bg-gradient-to-br from-[#00D962] to-[#FFEB31] font-bold hover:opacity-80`}
+                    className={`cursor-pointer px-4 sm:px-5 md:px-6 border-white py-1 sm:py-2 rounded-lg text-black text-xs sm:text-sm md:text-base xl:text-[14px] 2xl:text-[18px] bg-gradient-to-br from-[#00D962] to-[#FFEB31] font-bold hover:opacity-80`}
                   >
                     {address?.substring(0, 7) + "..." + address?.substring(37, 42)}
                   </button>
@@ -59,7 +59,7 @@ export const Navbar: React.FC = () => {
                 <div className="p-[2px] 2xl:p-1 rounded-lg bg-[radial-gradient(circle_at_top_left,_#FFFAEB,_#FFEB31)]">
                   <button
                     onClick={openConnectModal}
-                    className={`px-4 sm:px-5 md:px-6 border-white py-1 sm:py-2 rounded-lg text-black text-xs sm:text-sm md:text-base xl:text-[14px] 2xl:text-[18px] bg-gradient-to-br from-[#00D962] to-[#FFEB31] font-bold hover:opacity-80`}
+                    className={`cursor-pointer px-4 sm:px-5 md:px-6 border-white py-1 sm:py-2 rounded-lg text-black text-xs sm:text-sm md:text-base xl:text-[14px] 2xl:text-[18px] bg-gradient-to-br from-[#00D962] to-[#FFEB31] font-bold hover:opacity-80`}
                   >
                     {t("connectWallet")}
                   </button>
