@@ -33,11 +33,11 @@
 }
 
 .ticker-track-left {
-  animation: tickerScrollLeft 30s linear infinite;
+  animation: tickerScrollLeft 50s linear infinite;
 }
 
 .ticker-track-right {
-  animation: tickerScrollRight 30s linear infinite;
+  animation: tickerScrollRight 70s linear infinite;
 }
 
 @theme {
