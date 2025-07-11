@@ -95,7 +95,7 @@ export default function ContactForm() {
   return (
     <div className="bg-transparent flex items-center justify-center px-4 sm:px-6 md:px-10 py-8 sm:py-12 2xl:pt-[140px] 3xl:pt-[187px] 3xl:pb-[140px]">
       <div className="w-[90%] max-w-[95vw] sm:max-w-3xl 2xl:max-w-[60%] 3xl:max-w-[50%]">
-        <h1 className="text-[#FFEB31] font-bold text-center mb-8 sm:mb-14 md:mb-16 text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-[40px] 2xl:text-[64px] 3xl:text-[94px] leading-tight">
+        <h1 id='contactUs' className="text-[#FFEB31] font-bold text-center mb-8 sm:mb-14 md:mb-16 text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-[40px] 2xl:text-[64px] 3xl:text-[94px] leading-tight">
           {t("contact.title")}
         </h1>
 

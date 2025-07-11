@@ -80,7 +80,7 @@ export default function AgricultureProblemAndSolution() {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center mt-10 2xl:mt-20">
+        <div className="hidden justify-center mt-10 2xl:mt-20">
           <button className="bg-[#00D962] hover:bg-[#00D962]/80 text-black font-bold text-base sm:text-lg 2xl:text-[26px] 3xl:text-3xl px-6 sm:px-10 py-3 sm:py-4 rounded-xl transition duration-200 3xl:border-4 2xl:border-2 border border-[#FFEB31]">
             {t("agriculture.cta")}
           </button>

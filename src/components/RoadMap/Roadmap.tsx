@@ -50,7 +50,7 @@ export default function RoadMap() {
   return (
     <div className="text-white py-4 md:py-8 2xl:py-[142px] px-4">
       <div className="max-w-[95%] mx-auto">
-        <h1 className="text-xl md:text-3xl xl:text-[40px] 2xl:text-[56px] 3xl:text-[87px] text-center font-bold mb-0 md:mb-8 2xl:mb-16 text-[#FFEB31]">
+        <h1 id='roadmap' className="text-xl md:text-3xl xl:text-[40px] 2xl:text-[56px] 3xl:text-[87px] text-center font-bold mb-0 md:mb-8 2xl:mb-16 text-[#FFEB31]">
           {t("roadmap.title")}
         </h1>
 
