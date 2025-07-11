@@ -29,7 +29,7 @@ export const Navbar: React.FC = () => {
           <img
             src={Logo}
             alt="Matrix Eagle Logo"
-            className="h-[28px] sm:h-[40px] md:h-[50px] xl:h-[40px] 2xl:h-[66px] 3xl:h-[85px] object-contain min-w-[90px] md:min-w-[130px] xl:min-w-[90px] 2xl:min-w-[90px] 3xl:min-w-[150px] 2xl:max-w-[570px]"
+            className="h-[28px] sm:h-[40px] md:h-[50px] xl:h-[45px] 2xl:h-[66px] 3xl:h-[85px] object-contain min-w-[90px] md:min-w-[130px] xl:min-w-[90px] 2xl:min-w-[90px] 3xl:min-w-[150px] 2xl:max-w-[570px]"
           />
         </div>
         <div className="flex xl:space-x-[50px] 2xl:space-x-[78px] 3xl:space-x-[170px]">
