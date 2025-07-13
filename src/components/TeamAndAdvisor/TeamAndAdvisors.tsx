@@ -9,43 +9,49 @@ export default function TeamAndAdvisors() {
       name: t("team.members.bonner.name"),
       title: t("team.members.bonner.title"),
       image: "/teamMemberImages/CEO.png",
-      twitter: "#",
-      linkedin: "#",
+      twitter: "https://x.com/MatrixEagle1",
+      linkedin: "https://www.linkedin.com/in/bonnergibbs/",
+      twitterHidden: false
     },
     {
       name: t("team.members.hector.name"),
       title: t("team.members.hector.title"),
       image: "/teamMemberImages/coFounderImage.jpg",
-      twitter: "#",
-      linkedin: "#",
+      twitter: "https://x.com/hctorhe1",
+      linkedin: "https://www.linkedin.com/in/hectorhdz-cam-hernandez-gonzalez-075b28374",
+      twitterHidden: false
     },
     {
       name: t("team.members.eder.name"),
       title: t("team.members.eder.title"),
       image: "/teamMemberImages/strategicAdvisor.png",
-      twitter: "#",
-      linkedin: "#",
+      twitter: "https://x.com/ederc85",
+      linkedin: "https://www.linkedin.com/in/edercl",
+      twitterHidden: false
     },
     {
       name: t("team.members.jose.name"),
       title: t("team.members.jose.title"),
       image: "/teamMemberImages/foodEngineer_cropped.png",
       twitter: "#",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/jose-antonio-vega-henao-b128a4127",
+      twitterHidden: true
     },
     {
       name: t("team.members.aryan.name"),
       title: t("team.members.aryan.title"),
       image: "/teamMemberImages/projectManagerImage.png",
-      twitter: "#",
-      linkedin: "#",
+      twitter: "https://x.com/smm_aryan",
+      linkedin: "https://www.linkedin.com/in/aryaanshah/",
+      twitterHidden: false
     },
     {
       name: t("team.members.marko.name"),
       title: t("team.members.marko.title"),
       image: "/teamMemberImages/blockchainDeveloper.png",
-      twitter: "#",
-      linkedin: "#",
+      twitter: "https://x.com/marko8424",
+      linkedin: "https://www.linkedin.com/in/marko-milanovic-102aab323/",
+      twitterHidden: false
     },
   ];
 
@@ -89,7 +95,8 @@ export default function TeamAndAdvisors() {
                   <div className="flex gap-2 mt-1 2xl:mt-5 items-center">
                     <a
                       href={member.twitter}
-                      className="w-6 h-6 sm:w-8 sm:h-8 2xl:w-[33px] 3xl:w-[43px] 2xl:h-[33px] 3xl:h-[43px] bg-[#FFEB31] rounded flex items-center justify-center hover:opacity-80 transition-opacity"
+                      hidden={member.twitterHidden}
+                      className={`w-6 h-6 sm:w-8 sm:h-8 2xl:w-[33px] 3xl:w-[43px] 2xl:h-[33px] 3xl:h-[43px] bg-[#FFEB31] rounded flex items-center justify-center hover:opacity-80 transition-opacity`}
                     >
                       <svg
                         className="w-3 h-3 sm:w-4 sm:h-4 text-black"
