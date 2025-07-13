@@ -2,13 +2,13 @@
 import * as React from "react";
 import { PriceDisplay } from "./PriceDisplay";
 import { PaymentMethodSelector } from "./PaymentMethodSelector";
-import { InvestmentInput } from "./InvestmentInput";
+//import { InvestmentInput } from "./InvestmentInput";
 import { PurchaseButton } from "./PurchaseButton";
 
 export default function TokenPurchaseInterface() {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = React.useState('USDT');
-  const [usdAmount, setUsdAmount] = React.useState('5');
-  const [tokenAmount, setTokenAmount] = React.useState('20,000');
+  const [usdAmount, _setUsdAmount] = React.useState('5');
+  const [tokenAmount, _setTokenAmount] = React.useState('20,000');
 
   const paymentMethods = [
     { name: 'USDT' },
@@ -20,6 +20,7 @@ export default function TokenPurchaseInterface() {
     setSelectedPaymentMethod(method);
   };
 
+  /*
   const handleUsdAmountChange = (amount: string) => {
     setUsdAmount(amount);
     // Calculate token amount based on exchange rate
@@ -35,6 +36,7 @@ export default function TokenPurchaseInterface() {
     const usd = numAmount / 200; // 1USDT = 200$ETATA
     setUsdAmount(usd.toString());
   };
+  */
 
   const handlePurchase = () => {
     console.log('Purchase initiated:', {
