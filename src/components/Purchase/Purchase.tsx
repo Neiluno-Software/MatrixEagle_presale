@@ -27,6 +27,7 @@ import Timer from "../Timer";
 import bnb from "../../assets/bnb.svg";
 import usdt from "../../assets/usdt.svg"
 import usdc from "../../assets/usdc.svg"
+import etata from "../../assets/etata.png"
 
 const useRefresh = () => {
   const { fast, slow } = useContext(RefreshContext)
@@ -52,7 +53,6 @@ export default function Purchase() {
     args: [],
     chainId: chainId
   }) as { data: any; refetch: () => void };
-
 
   const { data: tokenPrice, refetch: refetchTokenPrice } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
@@ -244,7 +244,12 @@ export default function Purchase() {
   };
 
   const handleChange = (e: any) => {
-    setPayAmount(e.target.value);
+    const regex = /^(?:\d+(\.\d{0,3})?)?$/;
+    if (regex.test(e.target.value)) {
+      setPayAmount(e.target.value);
+    } else if(e.target.value == '') {
+      setPayAmount(0);
+    }
 
     if (payKind === 0)
       setExpectationTokenAmount(e.target.value / parseFloat(ethers.formatUnits(tokenPrice ? tokenPrice.toString() : "1", 8)));
@@ -389,7 +394,11 @@ export default function Purchase() {
     }
   }
 
-
+  const currencyList=[
+    {label:'USDT', img:usdt},
+    {label:'BNB', img:bnb},
+    {label:'USDC', img:usdc},
+  ];
 
   return (
     <div className="relative md:min-w-[480px] lg:min-w-[530px] 2xl:max-w-[1000px] w-full mx-auto px-2">
@@ -453,16 +462,19 @@ export default function Purchase() {
 
           {/* Currency Buttons */}
           <div className="flex flex-row gap-3 sm:gap-4 2xl:gap-x-[56px] mb-4 md:mb-6 2xl:mb-4">
-            {["USDT", "BNB", "USDC"].map((currency, index) => (
+            {currencyList.map((currency, index) => (
               <button
-                key={currency}
+                key={currency.label}
                 onClick={() => handleClick(index)}
-                className={`cursor-pointer w-1/3 flex-1 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-[10px] border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${payKind === index
+                className={`cursor-pointer flex justify-center item-center text-center adjust-center w-1/3 py-2 sm:py-3 2xl:py-2 3xl:py-3 rounded-[10px] border border-[#00D962] 2xl:border-2 font-semibold text-xs sm:text-base 2xl:text-[22px] transition-colors ${payKind === index
                   ? "bg-[#00D962] text-black"
                   : "bg-[#73737361] text-white hover:bg-[#d5dfed]"
                   }`}
               >
-                {currency}
+                <div className='flex'>
+                  <img src={currency.img} className={`h-[16px] sm:h-[24px] md:h-[24px] 2xl:h-[33px] mr-1`}></img>
+                  <div className='flex item-center text-center adjust-center h-[100%]'>{currency.label}</div>
+                </div>
               </button>
             ))}
           </div>
@@ -471,7 +483,7 @@ export default function Purchase() {
           <div className="text-xs sm:text-base 2xl:text-[24px] mb-2 2xl:mb-1">
             {t("Purchase.amountTOInvest")}
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 2xl:gap-[49px] 2xl:justify-between w-full mb-6 2xl:mb-0">
+          <div className="flex flex-row gap-3 sm:gap-4 2xl:gap-[49px] 2xl:justify-between w-full mb-6 2xl:mb-0">
             <div className="w-full sm:w-1/2 relative">
               <input
                 type="text"
@@ -493,8 +505,8 @@ export default function Purchase() {
                 placeholder="0.00"
                 className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 pr-20 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm sm:text-base md:text-lg 2xl:text-[20px] text-[#FFEB31]">
-                $ETATA
+              <span className="absolute right-4 top-1/2 -translate-y-1/2">
+                <img src={etata} className='w-[32px]'></img>
               </span>
             </div>
           </div>

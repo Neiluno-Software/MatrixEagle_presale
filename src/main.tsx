@@ -12,7 +12,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RefreshContextProvider } from './context/RefreshContext'
 
 const config = getDefaultConfig({
-  appName: "ETATA",
+  appName: "USSE",
   projectId: "855e1e89077779023ebffcdb394cf688",
   chains: [
     bsc,
