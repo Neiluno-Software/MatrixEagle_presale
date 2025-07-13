@@ -22,6 +22,12 @@ import USDT_ABI from '../../config/abis/USDT_ABI.json';
 import USDC_ABI from '../../config/abis/USDT_ABI.json';
 import { RefreshContext } from '../../context/RefreshContext'
 
+import Timer from "../Timer";
+
+import bnb from "../../assets/bnb.svg";
+import usdt from "../../assets/usdt.svg"
+import usdc from "../../assets/usdc.svg"
+
 const useRefresh = () => {
   const { fast, slow } = useContext(RefreshContext)
   return { fastRefresh: fast, slowRefresh: slow }
@@ -104,7 +110,7 @@ export default function Purchase() {
     chainId: chainId
   }) as { data: any; refetch: () => void };
 
-  const { data: _startTime, refetch: refetchStartTime } = useReadContract({
+  const { data: startTime, refetch: refetchStartTime } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
     abi: PRESALE_ABI,
     functionName: 'startTime',
@@ -112,7 +118,7 @@ export default function Purchase() {
     chainId: chainId
   }) as { data: any; refetch: () => void };
 
-  const { data: _phaseDuration, refetch: refetchPhaseDuration } = useReadContract({
+  const { data: phaseDuration, refetch: refetchPhaseDuration } = useReadContract({
     address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
     abi: PRESALE_ABI,
     functionName: 'phaseDuration',
@@ -181,16 +187,23 @@ export default function Purchase() {
     refetchPhaseDuration();
   }, [slowRefresh])
 
+  const [ctx, setCtx] = useState([
+    { name: 'USDT', img: usdt, active: false },
+    { name: 'BNB', img: bnb, active: true },
+    { name: 'USDC', img: usdc, active: false },
+  ]);
+
   const [payKind, setPayKind] = useState(0);
-  const [_payKindString, setPayKindString] = useState('ETH you pay');
-  const [selectedCurrency, setSelectedCurrency] = useState("USDT");
+  const [_payKindString, setPayKindString] = useState('BNB you pay');
+  const [_selectedCurrency, setSelectedCurrency] = useState("USDT");
+  const [payKindImg, setPayKindImg] = useState(ctx[0].img);
 
   const [payAmount, setPayAmount] = useState(0);
   const [expectationTokenAmount, setExpectationTokenAmount] = useState(0);
 
   const [progress, setProgress] = useState(0);
 
-  //const [_countdownTime, setCountdownTime] = useState(0);
+  const [countdownTime, setCountdownTime] = useState(0);
 
   const [isApproving, setIsApproving] = useState(false);
   const [isPaying, setIsPaying] = useState(false);
@@ -202,20 +215,28 @@ export default function Purchase() {
     }
   }, [tokenInCurrentPhase, targetAmountForCurrentPhase]);
 
+  useEffect(() => {
+    setCountdownTime(startTime + phaseDuration);
+  }, [startTime, phaseDuration])
+
   const handleClick = (index: any) => {
     if (index === payKind)
       return;
 
     setPayKind(index);
+    setCtx(ctx.map((item, i) => ({ ...item, active: i === index })));
     if (index === 0) {
       setPayKindString('USDT you pay');
       setSelectedCurrency('USDT');
+      setPayKindImg(ctx[0].img);
     } else if (index === 1) {
       setPayKindString('BNB you pay');
       setSelectedCurrency('BNB');
+      setPayKindImg(ctx[1].img);
     } else if (index === 2) {
       setPayKindString('USDC you pay');
       setSelectedCurrency('USDC');
+      setPayKindImg(ctx[2].img);
     }
 
     setPayAmount(0);
@@ -400,7 +421,7 @@ export default function Purchase() {
               {t("Purchase.secureToken")}
             </p>
           </div>
-
+          <Timer timeToEnd={countdownTime} />
           {/* Progress Bar */}
           <div className="relative rounded-[5px] 2xl:rounded-[10px] mb-4 md:mb-6 xl:mb-3  border bg-[#73737361] border-[#00D962] 2xl:border-2 h-10 2xl:h-[55px]">
             <div
@@ -459,7 +480,9 @@ export default function Purchase() {
                 className="w-full bg-[#73737361] border border-[#00D962] 2xl:border-2 rounded-[10px] p-2 sm:p-3 2xl:py-3 text-white text-sm sm:text-base md:text-lg 2xl:text-[20px] focus:outline-none focus:ring-2 focus:ring-[#00D962]"
               />
               <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm sm:text-base md:text-lg 2xl:text-[20px] text-white">
-                {selectedCurrency}
+                {/* {selectedCurrency} */}
+                
+                <img src={payKindImg} alt={ctx[1].name} className="max-w-[32px]" />
               </span>
             </div>
             <div className="w-full sm:w-1/2 relative">

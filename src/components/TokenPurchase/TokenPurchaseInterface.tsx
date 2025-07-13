@@ -85,13 +85,13 @@ export default function TokenPurchaseInterface() {
               onMethodSelect={handlePaymentMethodSelect}
             />
 
-            <InvestmentInput
+            {/* <InvestmentInput
               usdAmount={usdAmount}
               tokenAmount={tokenAmount}
               exchangeRate="1USDT = 200$ETATA"
               onUsdAmountChange={handleUsdAmountChange}
               onTokenAmountChange={handleTokenAmountChange}
-            />
+            /> */}
 
             <PurchaseButton onClick={handlePurchase} />
           </section>
