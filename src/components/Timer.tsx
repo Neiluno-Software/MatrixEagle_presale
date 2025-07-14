@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from "react-i18next";
 
 export default function Timer({ timeToEnd } : { timeToEnd:any }) {
-    const [days, setDays] = useState(0)
-    const [hours, setHours] = useState(0)
-    const [minutes, setMinutes] = useState(0)
-    const [seconds, setSeconds] = useState(0)
+    const [days, setDays] = useState(0);
+    const [hours, setHours] = useState(0);
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(0);
+    const { t } = useTranslation();
 
     useEffect(() => {
         const getTimeUntil = () => {
@@ -37,25 +39,25 @@ export default function Timer({ timeToEnd } : { timeToEnd:any }) {
         <div className="grid grid-cols-4 gap-4 py-6">
             <div className="rounded-[10px] w-full pt-1 sm:pt-2 bg-[#00D962] text-white flex flex-col items-center justify-center">
                 <p className="text-[#00000080] font-bold text-[13px] md:text-base leading-[16px] md:tracking-wide">
-                    DAYS
+                  {t("Purchase.days")}
                 </p>
                 <p className="text-[16px] sm:text-[20px] md:text-[24px] font-bold text-[#01273E] ">{days < 10 ? 0 : Math.floor(days / 10)}{days % 10}</p>
             </div>
             <div className="rounded-[10px] w-full pt-1 sm:pt-2 bg-[#00D962] text-white flex flex-col items-center justify-center">
                 <p className="text-[#00000080] font-bold text-[13px] md:text-base leading-[16px] md:tracking-wide">
-                    HOURS
+                  {t("Purchase.hours")}
                 </p>
                 <p className="text-[16px] sm:text-[20px] md:text-[24px] font-bold text-[#01273E] ">{hours < 10 ? 0 : Math.floor(hours / 10)}{hours % 10}</p>
             </div>
             <div className="rounded-[10px] w-full pt-1 sm:pt-2 bg-[#00D962] text-white flex flex-col items-center justify-center">
                 <p className="text-[#00000080] font-bold text-[13px] md:text-base leading-[16px] md:tracking-wide">
-                    MINUTES
+                  {t("Purchase.minutes")}
                 </p>
                 <p className="text-[16px] sm:text-[20px] md:text-[24px] font-bold text-[#01273E] ">{minutes < 10 ? 0 : Math.floor(minutes / 10)}{minutes % 10}</p>
             </div>
             <div className="rounded-[10px] w-full pt-1 sm:pt-2 bg-[#00D962] text-white flex flex-col items-center justify-center">
                 <p className="text-[#00000080] font-bold text-[13px] md:text-base leading-[16px] md:tracking-wide">
-                    SECONDS
+                  {t("Purchase.seconds")}
                 </p>
                 <p className="text-[16px] sm:text-[20px] md:text-[24px] font-bold text-[#01273E] ">{seconds < 10 ? 0 : Math.floor(seconds / 10)}{seconds % 10}</p>
             </div>

@@ -460,7 +460,7 @@ export default function Purchase() {
             <div>
               1 <span className="text-[#FFEB31] font-bold">$ETATA</span> = ${ethers.formatUnits(tokenPrice ? tokenPrice : "0", 8)}
             </div>
-            <div>Next Price: ${parseInt(phase) >= 1 ? "0.2" : ethers.formatUnits(nextPrice ? nextPrice : "0", 8)}</div>
+            <div>{t("Purchase.nextPrice")} ${parseInt(phase) >= 1 ? "0.2" : ethers.formatUnits(nextPrice ? nextPrice : "0", 8)}</div>
           </div>
 
           {/* Currency Buttons */}

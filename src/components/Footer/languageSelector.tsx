@@ -8,6 +8,16 @@ const languages = [
     flag: "https://flagcdn.com/us.svg",
   },
   {
+    code: "de",
+    label: "Deutsch",
+    flag: "https://flagcdn.com/de.svg",
+  },
+  {
+    code: "es",
+    label: "Español",
+    flag: "https://flagcdn.com/es.svg",
+  },
+  {
     code: "fr",
     label: "Français",
     flag: "https://flagcdn.com/fr.svg",
@@ -25,9 +35,9 @@ export default function LanguageSelector() {
     <div className="h-full relative text-left mt-2 ">
       <button
         onClick={() => setOpen(!open)}
-        className="cursor-pointer flex items-center gap-1 pl-1 pr-1 py-[1px] bg-gradient-to-r from-[#1C1C2E] to-[#2A2B3E] border border-gray-600 rounded-md text-white "
+        className="cursor-pointer flex items-center gap-1 pt-1 pb-1 pl-1 pr-1 py-[1px] bg-gradient-to-r from-[#1C1C2E] to-[#2A2B3E] border border-gray-600 rounded-md text-white "
       >
-        <img src={selected.flag} alt={selected.label} className="w-5 h-5" />
+        <img src={selected.flag} alt={selected.label} className="w-4 h-4" />
         <span className="text-sm 2xl:text-[12px] 3xl:text-[14px]">
           {selected.label}
         </span>
@@ -59,9 +69,9 @@ export default function LanguageSelector() {
                 switchLanguage(lang.code);
                 setOpen(false);
               }}
-              className="w-full flex items-center gap-2 px-3 py-2 hover:bg-[#33344A] text-white text-sm 2xl:text-[12px] 3xl:text-[14px]"
+              className="cursor-pointer w-full flex items-center gap-2 px-3 py-2 hover:bg-[#33344A] text-white text-sm 2xl:text-[12px] 3xl:text-[14px]"
             >
-              <img src={lang.flag} alt={lang.label} className="w-5 h-5" />
+              <img src={lang.flag} alt={lang.label} className="w-4 h-4" />
               {lang.label}
             </button>
           ))}

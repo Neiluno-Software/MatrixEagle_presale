@@ -1,0 +1,286 @@
+{
+  "dashboard": "Panel de control",
+  "tokenomicsNav": "Tokenómica",
+  "whitepaper": "Libro blanco",
+  "roadmapNav": "Hoja de ruta",
+  "howToBuy": "Cómo comprar",
+  "contactUs": "Contáctenos",
+  "connectWallet": "Conectar billetera",
+  "Purchase": {
+    "buy": "Comprar",
+    "Now": "Ahora",
+    "secureToken": "Asegure sus tokens antes del próximo aumento de precio.",
+    "usdRaised": "USD RECAUDADO HASTA AHORA:",
+    "nextPrice": "Próximo precio:",
+    "days": "DÍAS",
+    "hours": "HORAS",
+    "minutes": "MINUTOS",
+    "seconds": "SEGUNDOS",
+    "tokens": "Tokens",
+    "sold": "Vendidos",
+    "amountTOInvest": "Cantidad que desea invertir",
+    "currentRate": "Tasa actual",
+    "connectWalletandBuy": "Conectar billetera y comprar",
+    "poweringFuture": "Impulsando el futuro de la agricultura",
+    "currentRateValue": "Tasa actual: 1 USDT = 200 $ETATA"
+  },
+  "hero": {
+    "title": "Potenciando la agricultura a través de",
+    "titleSpan": "Innovación en blockchain",
+    "description1": "Matrix Eagle es una plataforma impulsada por blockchain que conecta a inversores globales con proyectos agrícolas reales en América Latina, comenzando en Colombia.",
+    "connectWallet": "Conectar billetera",
+    "description2": "Hacemos que la inversión agrícola sea simple, segura e impactante, brindando a los agricultores acceso justo a la financiación y ayudando a los inversores a crecer con propósito.",
+    "description3": "No se trata solo de tecnología, se trata de confianza, transparencia y cambio en el mundo real.",
+    "joinCall1": "Únase al movimiento. Invierta con impacto.",
+    "joinCall2": "Crezca con confianza.",
+    "downloadWhitepaper": "Descargar libro blanco"
+  },
+  "Vision": {
+    "ourVision": "Nuestra visión",
+    "ourVisionDesc1": "Nuestra visión es crear un futuro en el que la inversión agrícola sea fácil, confiable y abierta a todos. Nuestro objetivo es utilizar la tecnología blockchain para eliminar barreras y construir un nuevo sistema en el que agricultores, inversores y comunidades crezcan juntos.",
+    "ourVisionDesc2": "Queremos liderar el camino en hacer que la agricultura sea más moderna, transparente y financieramente gratificante, no solo en Colombia, sino en toda América Latina y el mundo.",
+    "ourMission": "Nuestra misión",
+    "ourMissionDesc1": "Nuestra misión es conectar a los agricultores con inversores globales a través de una plataforma blockchain segura y transparente. Estamos comprometidos con brindar a los agricultores mejor acceso a la financiación, herramientas y apoyo para que puedan crecer sus negocios.",
+    "ourMissionDesc2": "Al mismo tiempo, ofrecemos a los inversores una forma de ganar ingresos mientras hacen un impacto real. Al combinar la tecnología con las necesidades agrícolas reales, ayudamos a ambos lados a tener éxito y construir comunidades más fuertes y sostenibles.",
+    "altVisionImage": "Tres agricultores parados juntos en un entorno agrícola verde exuberante"
+  },
+  "values": {
+    "ourValues": "Nuestros valores",
+    "staking1Title": "Interés",
+    "staking1": "Interés de préstamos agrícolas garantizados",
+    "security1Title": "Beneficio",
+    "security1": "Un porcentaje de los beneficios de la empresa",
+    "staking2Title": "Interés",
+    "staking2": "Beneficios generados por proyectos agrícolas exitosos",
+    "security2Title": "Staking",
+    "security2": "Una participación en el crecimiento a largo plazo de la plataforma"
+  },
+  "tokenInfo": {
+    "name": "Nombre",
+    "symbol": "Símbolo",
+    "decimal": "Decimal",
+    "tokens": "Tokens"
+  },
+  "tokenomics": {
+    "title": "TOKENÓMICA",
+    "warningText": "Tenga en cuenta que no debe enviar tokens a esta dirección, ya que puede resultar en la pérdida permanente de los tokens.",
+    "totalSupply": "100 millones de tokens",
+    "description": "La tokenómica describe la distribución y utilidad de nuestros tokens, asegurando el éxito y la estabilidad a largo plazo del proyecto Etata.",
+    "imageAlt": "Gráfico de distribución de tokenómica",
+    "distribution": {
+      "privateSale": "Venta privada",
+      "ecosystem": "Ecosistema",
+      "liquidity": "Liquidez",
+      "publicSale": "Venta pública",
+      "staking": "Staking",
+      "contingency": "Contingencia",
+      "presale": "Preventa",
+      "partnersFounders": "Socios / Fundadores"
+    }
+  },
+  "contractAddress": {
+    "title": "Dirección del contrato:",
+    "copied": "Copiado",
+    "copyAlt": "Copiar dirección",
+    "warningText": "No envíe tokens a esta dirección, ya que puede resultar en pérdida permanente."
+  },
+
+  "roadmap": {
+    "title": "Hoja de ruta",
+    "q1": {
+      "point1": "Diseñar la plataforma y la tokenómica",
+      "point2": "Reclutar al equipo central"
+    },
+    "q2": {
+      "point1": "Lanzar la preventa del token Etata",
+      "point2": "Iniciar esfuerzos de marketing y comunidad",
+      "point3": "Integrar a los primeros socios agrícolas"
+    },
+    "q3": {
+      "point1": "Lanzar el programa de staking",
+      "point2": "Habilitar la integración de billeteras móviles",
+      "point3": "Expandir los canales de Telegram y soporte"
+    },
+    "q4": {
+      "point1": "Lanzar el STO para inversiones basadas en acciones",
+      "point2": "Fortalecer las características y la interfaz de usuario de la plataforma",
+      "point3": "Iniciar la búsqueda de asociaciones estratégicas globales"
+    },
+    "description1": "Esta hoja de ruta proporciona un plan claro y paso a paso para construir y crecer el proyecto. Comienza con la configuración de la base, el diseño de la plataforma, el equipo y la tokenómica, y se dirige hacia el lanzamiento de la preventa, el marketing y las asociaciones agrícolas.",
+    "description2": "Cada trimestre se centra en el progreso real, como el lanzamiento de staking, la expansión de características y el crecimiento de la comunidad. Siguiendo este cronograma, Matrix Eagle puede crecer de manera constante y generar confianza con los inversores. Muestra que tenemos una visión clara y estamos listos para entregar."
+  },
+  "agriculture": {
+    "title": "Problema agrícola en América Latina",
+    "subtitle": "La agricultura en América Latina, especialmente en Colombia, enfrenta muchos problemas continuos:",
+    "problems": [
+      "Se enfrentan a mercados inestables y márgenes de beneficio bajos",
+      "La mayoría de los agricultores no tienen acceso a préstamos justos o confiables",
+      "Falta de confianza y transparencia en la gestión de las inversiones agrícolas"
+    ],
+    "solution": {
+      "title": "La solución de Matrix Eagle:",
+      "subtitle": "Matrix Eagle es una plataforma que combina la tecnología blockchain y la agricultura real para resolver los problemas anteriores.",
+      "highlight": "Creamos un espacio confiable y fácil de usar donde:",
+      "points": [
+        "Los agricultores pueden recibir financiamiento a través de contratos inteligentes que protegen a ambas partes",
+        "Los inversores pueden apoyar proyectos agrícolas de manera segura mientras obtienen beneficios",
+        "Todas las transacciones son trazables y seguras utilizando los estándares de blockchain BEP-20"
+      ]
+    },
+    "closing": "Al crear este puente entre la financiación moderna y la agricultura tradicional, Matrix Eagle aporta valor real a ambos mundos",
+    "cta": "Conectar y comprar token"
+  },
+  "team": {
+    "title": "Equipo y asesores",
+    "members": {
+      "bonner": {
+        "name": "Bonner Gibbs",
+        "title": "Fundador y CEO en Matrix Eagle"
+      },
+      "hector": {
+        "name": "Héctor Hernandez",
+        "title": "Co-fundador y COO"
+      },
+      "eder": {
+        "name": "Eder Castro",
+        "title": "Asesor financiero"
+      },
+      "jose": {
+        "name": "José Antonio Vega Henao",
+        "title": "Experto en ingeniería de alimentos y planificación de cultivos y curación de plantas"
+      },
+      "aryan": {
+        "name": "Aryan (Usama)",
+        "title": "Gerente de proyecto y ejecutivo senior de marketing"
+      },
+      "marko": {
+        "name": "Marko Milanović",
+        "title": "Desarrollador de blockchain"
+      }
+    }
+  },
+
+  "featureIn": {
+    "title": "Destacado en"
+  },
+  "gallery": {
+    "title": "Nuestra galería",
+    "description": "Nuestra galería captura el viaje de Matrix Eagle, desde la participación en eventos de la industria hasta la colaboración con agricultores, inversores y expertos agrícolas. Estos momentos reflejan nuestro compromiso de construir un futuro más fuerte y verde a través de conexiones reales, conocimiento compartido y asociaciones significativas.",
+    "alt": {
+      "0": "Visita a campo agrícola",
+      "1": "Reunión de equipo con agricultores",
+      "2": "Evento comunitario",
+      "3": "Reunión de asociación",
+      "4": "Demostración agrícola",
+      "5": "Discusión grupal",
+      "6": "Evento de campo",
+      "7": "Colaboración de equipo",
+      "8": "Presentación en conferencia",
+      "9": "Evento de Africana",
+      "10": "Inspección de campo",
+      "11": "Ceremonia de asociación",
+      "12": "Foto grupal"
+    }
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "namePlaceholder": "Nombre",
+    "emailPlaceholder": "Correo electrónico",
+    "messagePlaceholder": "Mensaje",
+    "submit": "Enviar mensaje"
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "question1": "¿Qué es Matrix Eagle?",
+    "answer1": "Matrix Eagle es una plataforma impulsada por blockchain que conecta proyectos agrícolas con inversores globales, garantizando transparencia, seguridad y trazabilidad en todas las transacciones.",
+    "question2": "¿Qué es ETATA?",
+    "answer2": "ETATA es el token de utilidad nativo de Matrix Eagle, utilizado para inversión, gobernanza y reparto de beneficios dentro del ecosistema.",
+    "question3": "¿Cómo puedo invertir en proyectos agrícolas?",
+    "answer3": "Puedes invertir creando una cuenta, completando el KYC y utilizando tokens ETATA para apoyar iniciativas agrícolas verificadas en la plataforma.",
+    "question4": "¿Matrix Eagle es solo para Colombia?",
+    "answer4": "No, aunque comienza con una fuerte presencia en Colombia, Matrix Eagle está diseñado para expandirse y apoyar proyectos agrícolas en toda América Latina y a nivel mundial.",
+    "question5": "¿Cómo se benefician los agricultores de Matrix Eagle?",
+    "answer5": "Los agricultores obtienen acceso a financiamiento transparente, inversiones basadas en contratos inteligentes y exposición más amplia al mercado, lo que ayuda a mejorar la rentabilidad y la sostenibilidad.",
+    "question6": "¿Es seguro invertir a través de Matrix Eagle?",
+    "answer6": "Sí, Matrix Eagle utiliza blockchain para transacciones seguras y trazables, y todos los proyectos pasan por un proceso de debida diligencia antes de ser listados para inversión.",
+    "question7": "¿Qué es SEtata?",
+    "answer7": "SEtata es un token de seguridad que representa derechos de patrimonio o reparto de beneficios en Matrix Eagle, ofreciendo valor a largo plazo a los titulares de tokens más allá de los tokens de utilidad como ETATA.",
+    "question8": "¿Dónde puedo comprar ETATA?",
+    "answer8": "Puedes comprar tokens ETATA a través de la plataforma Matrix Eagle durante eventos STO o más tarde desde intercambios soportados una vez listados.",
+    "question9": "¿Puedo ganar recompensas al tener ETATA?",
+    "answer9": "Sí, tener ETATA puede dar acceso a reparto de beneficios, votación de gobernanza, acceso temprano a proyectos y oportunidades de inversión exclusivas.",
+    "question10": "¿Cómo sé qué granjas son confiables?",
+    "answer10": "Todas las granjas listadas en Matrix Eagle son verificadas a través de un proceso de debida diligencia y verificación exhaustiva, incluyendo visitas locales y verificaciones legales."
+  },
+  "trustedPartners": {
+    "titlePart1": "APOYADO POR NUESTROS",
+    "titlePart2": "SOCIOS DE CONFIANZA",
+    "alt": "Socio {{index}}"
+  },
+
+  "footer": {
+    "whitepaper": "Libro blanco",
+    "roadmap": "Hoja de ruta",
+    "howToBuy": "Cómo comprar (Guía)",
+    "disclaimer1": "Descargo de responsabilidad: Las criptomonedas pueden no estar reguladas en su jurisdicción.",
+    "disclaimer2": "El valor de las criptomonedas puede fluctuar.",
+    "disclaimer3": "Las ganancias pueden estar sujetas a impuestos sobre ganancias de capital u otros impuestos aplicables en su jurisdicción.",
+    "copyright": "2025© Matrix Eagle | Todos los derechos reservados"
+  },
+  "howToBuySection": {
+    "how_to_buy_etata": "Cómo comprar ETATA",
+    "note": "Nota:",
+    "etata_presale_note": "ETATA se encuentra actualmente en su fase de preventa y no está disponible en Uniswap, PancakeSwap ni otros intercambios descentralizados (DEX). Por favor, tenga cuidado y evite comprar tokens ETATA falsos que puedan estar circulando en DEXs, ya que son estafas.",
+    "buy_etata_with_crypto": "Comprar ETATA con criptomonedas",
+    "step_1_prepare_wallet": "Paso 1: Preparar su billetera",
+    "prepare_wallet_text": "Antes de participar en la preventa de ETATA, asegúrese de tener una billetera compatible con Wallet Connect. Recomendamos usar MetaMask o Trust Wallet, pero cualquier billetera descentralizada compatible con Wallet Connect funcionará.",
+    "step_2_get_bnb": "Paso 2: Obtener BNB, USDT o USDC",
+    "get_bnb_text": "Asegúrese de tener BNB en su billetera, ya que se requiere para pequeñas tarifas de gas en la red Binance Smart Chain, independientemente de si está comprando con USDT o USDC.",
+    "step_3_connect_dapp": "Paso 3: Conectar a la DApp",
+    "connect_dapp_step_1": "1. Abra su navegador web preferido y visite",
+    "connect_dapp_step_2": "2. Haga clic en el botón \"Conectar billetera\".",
+    "connect_dapp_step_3": "3. Asegúrese de estar en la red Binance Smart Chain.",
+    "step_4_choose_payment": "Paso 4: Elegir opción de pago",
+    "choose_payment_text": "En el panel de control de preventa de ETATA, seleccione su opción de pago preferida haciendo clic en el botón correspondiente (BNB, USDT o USDC).",
+    "step_5_enter_amount": "Paso 5: Ingresar monto de compra",
+    "enter_amount_step_1": "1. Ingrese la cantidad de BNB, USDT o USDC que desea invertir en la preventa de ETATA.",
+    "enter_amount_step_2": "2. El panel de control mostrará cuántos tokens ETATA recibirá por el monto seleccionado.",
+    "enter_amount_step_3": "3. Confirme su selección y haga clic en el botón \"Comprar\" para proceder.",
+    "step_6_verify_transaction": "Paso 6: Verificar y confirmar transacción",
+    "verify_transaction_step_1": "1. Su billetera (por ejemplo, MetaMask) mostrará los detalles de la transacción.",
+    "verify_transaction_step_2": "2. Verifique que los detalles de la transacción sean correctos, incluyendo el monto y la dirección del destinatario.",
+    "verify_transaction_step_3": "3. Confirme la transacción dentro de su billetera.",
+    "verify_transaction_step_4": "4. Espere a que la transacción sea confirmada en la red Binance Smart Chain, toma unos segundos.",
+    "important_note": "IMPORTANTE:",
+    "important_note_text": "Al comprar con USDT o USDC, los usuarios deben completar dos transacciones: 1. La primera transacción es para aprobar el contrato de USDT o USDC. 2. La segunda transacción es para el monto de compra real. Asegúrese de completar ambos pasos para finalizar su transacción.",
+    "important_note_content1": "1. La primera transacción es para aprobar el contrato de USDT o USDC.",
+    "important_note_content2": "2. La segunda transacción es para el monto de compra real.",
+    "important_note_content3": "Asegúrese de completar ambos pasos para finalizar su transacción.",
+    "buy_etata_with_card": "Comprar ETATA con tarjeta",
+    "new_to_defi": "¿Nuevo en DeFi?",
+    "new_to_defi_text": "Los nuevos usuarios pueden comprar ETATA fácilmente utilizando una tarjeta de crédito o débito sin necesidad de verificación o procesos KYC.",
+    "step_1_purchase_bnb": "Paso 1: Comprar BNB con tarjeta",
+    "purchase_bnb_text": "Visite uno de los siguientes sitios web de on-ramp:",
+    "transak": "• Transak",
+    "moonpay": "• MoonPay",
+    "buy_bnb_text": "Compre BNB y envíelo directamente a su billetera. Siga las instrucciones en pantalla proporcionadas en la plataforma.",
+    "tip": "Consejo:",
+    "tip_text": "Recomendamos comprar un mínimo de $50 en BNB para cubrir todos los gastos, incluidas las tarifas de gas, para comprar ETATA.",
+    "step_2_buy_etata": "Paso 2: Comprar ETATA con BNB adquirido",
+    "buy_etata_text": "Una vez que haya adquirido BNB en su billetera, puede proceder a comprar ETATA utilizando la misma billetera.",
+    "follow_steps": "Siga los pasos descritos anteriormente en la sección \"Comprar ETATA con criptomonedas\", comenzando desde la conexión de su billetera al sitio web de ETATA.",
+    "note_2": "Nota:",
+    "note_2_text": "Asegúrese de tener suficiente BNB en su billetera para cubrir la cantidad de ETATA que desea comprar, así como cualquier tarifa de gas asociada.",
+    "add_etata_wallet": "Agregar ETATA a su billetera",
+    "add_etata_text": "Para ver sus tokens ETATA en su billetera, agregue ETATA como un token personalizado utilizando los siguientes detalles:",
+    "token_name": "• Nombre del token:",
+    "token_name_value": "ETATA para agricultura colaborativa",
+    "token_symbol": "• Símbolo:",
+    "token_symbol_value": "ETATA",
+    "token_network": "• Red:",
+    "token_network_value": "Binance Smart Chain",
+    "token_decimals": "• Decimales:",
+    "contract_address": "• Dirección del contrato:",
+    "close": "Cerrar"
+  }
+}

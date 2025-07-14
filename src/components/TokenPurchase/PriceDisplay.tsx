@@ -1,5 +1,6 @@
 "use client";
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 
 interface PriceDisplayProps {
   usdRaised: string;
@@ -14,6 +15,7 @@ export const PriceDisplay: React.FC<PriceDisplayProps> = ({
   currentPrice,
   nextPrice
 }) => {
+  const { t } = useTranslation();
   return (
     <section className="relative">
       <p className="relative self-center mt-9 text-3xl font-medium tracking-tighter text-white">
@@ -40,7 +42,7 @@ export const PriceDisplay: React.FC<PriceDisplayProps> = ({
           <div>${currentPrice}</div>
         </div>
         <div className="my-auto text-2xl">
-          Next Price: ${nextPrice}
+          {t("Purchase.nextPrice")} ${nextPrice}
         </div>
       </div>
     </section>
