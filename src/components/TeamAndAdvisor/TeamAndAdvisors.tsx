@@ -77,10 +77,10 @@ export default function TeamAndAdvisors() {
 
                 <div className="flex justify-between items-start gap-3 sm:gap-4 mt-4 sm:mt-5">
                   <div className="space-y-1 sm:space-y-2">
-                    <h3 className="text-[#FFEB31] text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[23px] 2xl:text-[40px] 3xl:text-[62px] font-semibold leading-tight">
+                    <h3 className="text-[#FFEB31] text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[23px] 2xl:text-[30px] 3xl:text-[40px] font-semibold leading-tight">
                       {member.name}
                     </h3>
-                    <p className="text-white text-xs sm:text-base md:text-lg xl:text-[16px] 2xl:text-[23px] 3xl:text-[35px] font-medium leading-relaxed max-w-[240px] sm:max-w-[280px] md:max-w-full">
+                    <p className="text-white text-xs sm:text-base md:text-lg xl:text-[16px] 2xl:text-[20px] 3xl:text-[30px] font-medium leading-relaxed max-w-[240px] sm:max-w-[280px] md:max-w-full">
                       {index === 0 && member.title.includes(" at ") ? (
                         <>
                           {member.title.split(" at ")[0]}{" "}
@@ -92,7 +92,7 @@ export default function TeamAndAdvisors() {
                     </p>
                   </div>
 
-                  <div className="flex gap-2 mt-1 2xl:mt-5 items-center">
+                  <div className="flex gap-2 items-start">
                     <a
                       href={member.twitter}
                       hidden={member.twitterHidden}

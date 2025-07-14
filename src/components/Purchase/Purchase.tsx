@@ -432,10 +432,10 @@ export default function Purchase() {
           </div>
           <Timer timeToEnd={countdownTime} />
           {/* Progress Bar */}
-          <div className="relative rounded-[5px] 2xl:rounded-[10px] mb-4 md:mb-6 xl:mb-3  border bg-[#73737361] border-[#00D962] 2xl:border-2 h-10 2xl:h-[55px]">
+          <div className="relative rounded-[10px] 2xl:rounded-[15px] mb-4 md:mb-6 xl:mb-3  border bg-[#73737361] border-[#00D962] 2xl:border-2 h-10 2xl:h-[55px]">
             <div
-              className="bg-[#00D962] h-full rounded-[4px] 2xl:rounded-[7px] transition-all duration-500 ease-out"
-              style={{ width: `${progress}%` }}
+              className="bg-[#00D962] h-full rounded-[7px] 2xl:rounded-[12px] transition-all duration-500 ease-out"
+              style={{ width: `${progress < 2 ? 2 : progress}%` }}
             ></div>
             <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
               {(parseFloat(ethers.formatUnits(tokenTotal ? tokenTotal.toString() : "0", "ether")) / 120000).toFixed(2)}%
@@ -483,10 +483,10 @@ export default function Purchase() {
           </div>
 
           {/* Amount Inputs */}
-          <div className="text-xs sm:text-base 2xl:text-[24px] mb-2 2xl:mb-1">
+          <div className="text-left text-white text-xs sm:text-base md:text-lg xl:text-[16px] 2xl:text-[22px]">
             {t("Purchase.amountTOInvest")}
           </div>
-          <div className="flex flex-row gap-3 sm:gap-4 2xl:gap-[49px] 2xl:justify-between w-full mb-6 2xl:mb-0">
+          <div className="flex flex-row gap-3 sm:gap-4 2xl:gap-[49px] 2xl:justify-between w-full mb-4">
             <div className="w-full sm:w-1/2 relative">
               <input
                 type="text"
@@ -515,7 +515,7 @@ export default function Purchase() {
           </div>
 
           {/* Rate Info */}
-          <div className="text-left text-white mb-4 md:mb-6 xl:mb-3 text-xs sm:text-base md:text-lg 2xl:text-[20px]">
+          <div className="text-left text-white text-xs sm:text-base md:text-lg xl:text-[16px] 2xl:text-[22px]">
             {t("Purchase.currentRate")}: 1 USDT = 200 $ETATA
           </div>
 

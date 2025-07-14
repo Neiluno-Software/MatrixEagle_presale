@@ -78,7 +78,10 @@ export const HeroSection: React.FC = () => {
       {/* Join call to action */}
       <div className="flex justify-start mb-7">
         <h2 className="text-xl font-bold text-[#FFEB31] xl:text-[18px] 2xl:text-[32px] 3xl:text-[51px]">
-          {t("hero.joinCall")}
+          {t("hero.joinCall1")}
+        </h2>
+        <h2 className="text-xl font-bold text-[#FFEB31] xl:text-[18px] 2xl:text-[32px] 3xl:text-[51px]">
+          {t("hero.joinCall2")}
         </h2>
       </div>
 
