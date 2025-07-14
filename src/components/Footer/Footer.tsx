@@ -1,16 +1,22 @@
 "use client";
 
-import React from "react";
+import React, {useState} from "react";
 import { useTranslation } from "react-i18next";
 import { SocialIcons } from "./SocialIcons";
+import HowToBuy from '../HowToBuy/HowToBuy';
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation();
 
-  const footerLinks = [
-    { label: t("footer.whitepaper"), href: "/Whitepaper Matrix Eagle (Etata).pdf" },
-    { label: t("footer.howToBuy"), href: "#" },
-  ];
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
   return (
     <footer className="w-full mt-10 bg-transparent ">
@@ -20,16 +26,22 @@ export const Footer: React.FC = () => {
 
         {/* Navigation Links */}
         <nav className="flex justify-center flex-wrap gap-x-9 2xl:gap-x-12">
-          {footerLinks.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
+          <a
+              key={t("footer.whitepaper")}
+              href="/Whitepaper Matrix Eagle (Etata).pdf"
               target="_blank"
-              className="text-large 2xl:text-[21px] font-semibold text-[#FFEB31] hover:text-[#FFEB31]/70 transition"
+              className="cursor-pointer text-large 2xl:text-[21px] font-semibold text-[#FFEB31] hover:text-[#FFEB31]/70 transition"
             >
-              {label}
-            </a>
-          ))}
+            {t("footer.whitepaper")}
+          </a>
+          <a
+              key={t("footer.howToBuy")}
+              onClick={handleOpen}
+              target="_self"
+              className="cursor-pointer text-large 2xl:text-[21px] font-semibold text-[#FFEB31] hover:text-[#FFEB31]/70 transition"
+            >
+            {t("footer.howToBuy")}
+          </a>
         </nav>
 
         {/* Disclaimer Text */}
@@ -42,6 +54,7 @@ export const Footer: React.FC = () => {
           <p className="text-[#FFEB31] font-medium 2xl:text-[20px]">{t("footer.copyright")}</p>
         </div>
       </div>
+      <HowToBuy isOpen={isOpen} onClose={handleClose}></HowToBuy>
     </footer>
   );
 };
