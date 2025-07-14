@@ -49,7 +49,7 @@ export default function Component() {
                     <h2 className="text-xl lg:text-2xl 2xl:text-[34px] 3xl:text-[55px] font-bold text-[#FFEB31] mb-1 ">
                       {value.title}
                     </h2>
-                    <p className="text-white  text-sm lg:text-sm 2xl:text-[22px] 3xl:text-[33px] leading-relaxed font-medium">
+                    <p className="text-white text-sm lg:text-sm 2xl:text-[20px] 3xl:text-[30px] leading-relaxed font-medium">
                       {value.description}
                     </p>
                   </div>
