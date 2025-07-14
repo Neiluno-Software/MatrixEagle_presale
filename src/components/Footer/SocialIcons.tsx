@@ -19,7 +19,7 @@ export const SocialIcons: React.FC = () => {
             key={index}
             className="w-12 h-12 2xl:w-[54px] 2xl:h-[54px] 3xl:w-[100px] 3xl:h-[100px] rounded-lg flex items-center justify-center p-2"
           >
-            <a href={social.link} target="_new">
+            <a href={social.link} target="_blank">
               <img
                 src={social.img}
                 alt={social.alt}

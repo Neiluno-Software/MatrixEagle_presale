@@ -96,6 +96,7 @@ export default function TeamAndAdvisors() {
                     <a
                       href={member.twitter}
                       hidden={member.twitterHidden}
+                      target="_blank"
                       className={`w-6 h-6 sm:w-8 sm:h-8 2xl:w-[33px] 3xl:w-[43px] 2xl:h-[33px] 3xl:h-[43px] bg-[#FFEB31] rounded flex items-center justify-center hover:opacity-80 transition-opacity`}
                     >
                       <svg
@@ -108,6 +109,7 @@ export default function TeamAndAdvisors() {
                     </a>
                     <a
                       href={member.linkedin}
+                      target="_blank"
                       className="w-6 h-6 sm:w-8 sm:h-8 2xl:w-[33px] 3xl:w-[43px] 2xl:h-[33px] 3xl:h-[43px] bg-[#FFEB31] rounded flex items-center justify-center hover:opacity-80 transition-opacity"
                     >
                       <svg
