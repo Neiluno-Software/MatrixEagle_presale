@@ -437,6 +437,9 @@ export default function Purchase() {
               className="bg-[#00D962] h-full rounded-[4px] 2xl:rounded-[7px] transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
             ></div>
+            <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+              {(parseFloat(ethers.formatUnits(tokenTotal ? tokenTotal.toString() : "0", "ether")) / 120000).toFixed(2)}%
+            </div>
           </div>
 
           {/* Stats */}
@@ -457,7 +460,7 @@ export default function Purchase() {
             <div>
               1 <span className="text-[#FFEB31] font-bold">$ETATA</span> = ${ethers.formatUnits(tokenPrice ? tokenPrice : "0", 8)}
             </div>
-            <div>Next Price: ${ethers.formatUnits(nextPrice ? nextPrice : "0", 8)}</div>
+            <div>Next Price: ${parseInt(phase) >= 1 ? "0.2" : ethers.formatUnits(nextPrice ? nextPrice : "0", 8)}</div>
           </div>
 
           {/* Currency Buttons */}
@@ -522,6 +525,8 @@ export default function Purchase() {
               <button
                 className="cursor-pointer w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
                 onClick={handleBuy}
+                //hidden={parseInt(phase) == 2 ? true : false}
+                disabled={parseInt(phase) == 2 ? true : false}
               >
                 {getBuyButtonText()}
               </button>
@@ -529,6 +534,8 @@ export default function Purchase() {
               <button
                 className="cursor-pointer w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
                 onClick={openConnectModal}
+                //hidden={parseInt(phase) == 2 ? true : false}
+                disabled={parseInt(phase) == 2 ? true : false}
               >
                 {t("Purchase.connectWalletandBuy")} $ETATA
               </button>
