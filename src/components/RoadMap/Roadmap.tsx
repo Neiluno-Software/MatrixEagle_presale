@@ -55,18 +55,23 @@ export default function RoadMap() {
         </h1>
 
         <div className="relative">
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-[#00D962] h-full z-0" />
-
+          <div className="md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-[#00D962] h-full z-0" />
+          <div className="flex absolute md:relative left-1/2 transform -translate-x-1/2 top-6 md:top-16 lg:top-20 xl:top-20 2xl:top-24 w-7 h-7 z-0 md:z-10 rounded-full border-4 border-[#00D962] bg-[#00D962] items-center justify-center">
+            <div className="w-5 h-5">
+              <CheckCircle />
+            </div>
+          </div>
+          <div className="pt-10 md:hidden"></div>
           {timelineData.map((item) => (
             <div key={item.quarter} className="relative flex flex-col pt-10 md:pt-10 lg:pt-20 2xl:pt-24">
-              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 z-10 rounded-full border-4 border-[#00D962] bg-[#00D962] items-center justify-center">
+              <div className="md:flex absolute md:relative left-1/2 transform -translate-x-1/2 top-83 md:-top-1 lg:-top-7 xl:-top-7 w-7 h-7 z-0 md:z-10 rounded-full border-4 border-[#00D962] bg-[#00D962] items-center justify-center">
                 <div className="w-5 h-5">
                   <CheckCircle />
                 </div>
               </div>
 
               {/* Mobile */}
-              <div className="md:hidden flex flex-col items-center gap-6">
+              <div className="md:hidden flex flex-col items-center gap-6 z-10">
                 <div className="rounded-2xl overflow-hidden">
                   <img src={item.image} alt={`${item.quarter} illustration`} className="w-[250px] h-[250px] object-contain" />
                 </div>
@@ -83,7 +88,7 @@ export default function RoadMap() {
               </div>
 
               {/* Desktop */}
-              <div className="hidden md:flex mt-10 md:mt-16 lg:mt-32 mb-0 relative grid-cols-3 items-center justify-between gap-2 md:gap-4 2xl:gap-8">
+              <div className="hidden md:flex mt-10 mb-0 relative grid-cols-3 items-center justify-between gap-2 md:gap-4 2xl:gap-8">
                 {item.direction === "left" ? (
                   <>
                     <div className="left-[20px] w-[40%] justify-right items-left text-left flex">
@@ -142,8 +147,8 @@ export default function RoadMap() {
               </div>
             </div>
           ))}
-          <div className="hidden md:flex relative flex-col pt-10 md:pt-10 lg:pt-20 2xl:pt-24">
-              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 z-10 rounded-full border-4 border-[#00D962] bg-[#00D962] items-center justify-center">
+          <div className="hidden md:flex relative flex-col pt-10 md:pt-10">
+              <div className="hidden md:flex absolute left-1/2 transform top-9 -translate-x-1/2 w-7 h-7 z-10 rounded-full border-4 border-[#00D962] bg-[#00D962] items-center justify-center">
                 <div className="w-5 h-5">
                   <CheckCircle />
                 </div>
