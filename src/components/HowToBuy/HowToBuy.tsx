@@ -25,26 +25,26 @@ export default function HowToBuy({ isOpen, onClose }: DialogProps) {
 
           <p className="text-[22px] md:text-[24px] xl:text-[26px] 2xl:text-[28px] 3xl:text-[30px] text-center font-bold mt-3 md:mt-4 2xl:mt-5 mb-2 md:mb-3 2xl:mb-4 text-[#FFEB31]">{t("howToBuySection.buy_etata_with_crypto")}</p>
 
-          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#FBC5A0]">{t("howToBuySection.step_1_prepare_wallet")}</p>
+          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#00D962]">{t("howToBuySection.step_1_prepare_wallet")}</p>
           <p>{t("howToBuySection.prepare_wallet_text")}</p>
 
-          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#FBC5A0]">{t("howToBuySection.step_2_get_bnb")}</p>
+          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#00D962]">{t("howToBuySection.step_2_get_bnb")}</p>
           <p>{t("howToBuySection.get_bnb_text")}</p>
 
-          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#FBC5A0]">{t("howToBuySection.step_3_connect_dapp")}</p>
+          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#00D962]">{t("howToBuySection.step_3_connect_dapp")}</p>
           <p className="mb-0">{t("howToBuySection.connect_dapp_step_1")} <a href="https://etata.com" className="text-[#FFEB31]">https://etata.com.</a></p>
           <p className="mb-0">{t("howToBuySection.connect_dapp_step_2")}</p>
           <p className="mb-0">{t("howToBuySection.connect_dapp_step_3")}</p>
 
-          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#FBC5A0]">{t("howToBuySection.step_4_choose_payment")}</p>
+          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#00D962]">{t("howToBuySection.step_4_choose_payment")}</p>
           <p>{t("howToBuySection.choose_payment_text")}</p>
 
-          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#FBC5A0]">{t("howToBuySection.step_5_enter_amount")}</p>
+          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#00D962]">{t("howToBuySection.step_5_enter_amount")}</p>
           <p className="mb-0">{t("howToBuySection.enter_amount_step_1")}</p>
           <p className="mb-0">{t("howToBuySection.enter_amount_step_2")}</p>
           <p className="mb-0">{t("howToBuySection.enter_amount_step_3")}</p>
 
-          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#FBC5A0]">{t("howToBuySection.step_6_verify_transaction")}</p>
+          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#00D962]">{t("howToBuySection.step_6_verify_transaction")}</p>
           <p className="mb-0">{t("howToBuySection.verify_transaction_step_1")}</p>
           <p className="mb-0">{t("howToBuySection.verify_transaction_step_2")}</p>
           <p className="mb-0">{t("howToBuySection.verify_transaction_step_3")}</p>
@@ -57,10 +57,10 @@ export default function HowToBuy({ isOpen, onClose }: DialogProps) {
 
           <p className="text-[22px] md:text-[24px] xl:text-[26px] 2xl:text-[28px] 3xl:text-[30px] text-center font-bold mt-2 md:mt-3 2xl:mt-4 mb-2 md:mb-3 2xl:mb-4 text-[#FFEB31]">{t("howToBuySection.buy_etata_with_card")}</p>
 
-          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#FBC5A0]">{t("howToBuySection.new_to_defi")}</p>
+          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#00D962]">{t("howToBuySection.new_to_defi")}</p>
           <p>{t("howToBuySection.new_to_defi_text")}</p>
 
-          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#FBC5A0]">{t("howToBuySection.step_1_purchase_bnb")}</p>
+          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#00D962]">{t("howToBuySection.step_1_purchase_bnb")}</p>
           <p>{t("howToBuySection.purchase_bnb_text")}</p>
 
           <ul className="mb-4 ps-4">
@@ -72,7 +72,7 @@ export default function HowToBuy({ isOpen, onClose }: DialogProps) {
 
           <p><b>{t("howToBuySection.tip")}</b> {t("howToBuySection.tip_text")}</p>
 
-          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#FBC5A0]">{t("howToBuySection.step_2_buy_etata")}</p>
+          <p className="text-[18px] md:text-[20px] xl:text-[22px] 2xl:text-[24px] 3xl:text-[26px] font-bold mt-1 2xl:mt-2 mb-1 text-[#00D962]">{t("howToBuySection.step_2_buy_etata")}</p>
           <p>{t("howToBuySection.buy_etata_text")}</p>
           <p>{t("howToBuySection.follow_steps")}</p>
           <p><b>{t("howToBuySection.note_2")}</b> {t("howToBuySection.note_2_text")}</p>

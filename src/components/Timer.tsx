@@ -36,7 +36,7 @@ export default function Timer({ timeToEnd } : { timeToEnd:any }) {
     }, [timeToEnd])
 
     return (
-        <div className="grid grid-cols-4 gap-4 py-6">
+        <div className="grid grid-cols-4 gap-4 py-6 pr-3">
             <div className="w-full text-white flex flex-col items-center justify-center">
                 <p className="text-[16px] sm:text-[20px] md:text-[24px] font-bold">{days < 10 ? 0 : Math.floor(days / 10)}{days % 10}</p>
                 <p className="font-normal sm:font-bold text-[13px] md:text-base leading-[16px] tracking-tight md:tracking-wide">
