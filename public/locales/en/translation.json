@@ -22,7 +22,15 @@
     "currentRate": "Current Rate",
     "connectWalletandBuy": "Connect Wallet & Buy",
     "poweringFuture": "Powering the future of Agriculture",
-    "currentRateValue": "Current Rate: 1 USDT = 200 $ETATA"
+    "currentRateValue": "Current Rate: 1 USDT = 200 $ETATA",
+    "enterAmount": "Enter Amount",
+    "approving": "Approving ...",
+    "insufficientBalance":"Insufficient Balance",
+    "approveUSDT": "Approve USDT",
+    "payWithUSDT": "Pay with USDT",
+    "payWithBNB": "Pay with BNB",
+    "approveUSDC": "Approve USDC",
+    "payWithUSDC": "Pay with USDC"
   },
 
   "hero": {

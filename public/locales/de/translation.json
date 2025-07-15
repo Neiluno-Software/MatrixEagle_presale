@@ -22,7 +22,15 @@
     "currentRate": "Aktueller Kurs",
     "connectWalletandBuy": "Wallet verbinden & kaufen",
     "poweringFuture": "Die Zukunft der Landwirtschaft",
-    "currentRateValue": "Aktueller Kurs: 1 USDT = 200 $ETATA"
+    "currentRateValue": "Aktueller Kurs: 1 USDT = 200 $ETATA",
+    "enterAmount": "Betrag eingeben",
+    "approving": "Wird genehmigt ...",
+    "insufficientBalance": "Unzureichendes Guthaben",
+    "approveUSDT": "USDT genehmigen",
+    "payWithUSDT": "Mit USDT bezahlen",
+    "payWithBNB": "Mit BNB bezahlen",
+    "approveUSDC": "USDC genehmigen",
+    "payWithUSDC": "Mit USDC bezahlen"
   },
   "hero": {
     "title": "Landwirtschaft stärken durch",

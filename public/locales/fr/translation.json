@@ -22,7 +22,15 @@
     "currentRate": "Taux actuel",
     "connectWalletandBuy": "Connecter le portefeuille & acheter",
     "poweringFuture": "Propulser l'avenir de l'agriculture",
-    "currentRateValue": "Taux actuel : 1 USDT = 200 $ETATA"
+    "currentRateValue": "Taux actuel : 1 USDT = 200 $ETATA",
+    "enterAmount": "Entrer le montant",
+    "approving": "Approbation en cours ...",
+    "insufficientBalance": "Solde insuffisant",
+    "approveUSDT": "Approuver USDT",
+    "payWithUSDT": "Payer avec USDT",
+    "payWithBNB": "Payer avec BNB",
+    "approveUSDC": "Approuver USDC",
+    "payWithUSDC": "Payer avec USDC"
   },
   "hero": {
     "title": "Renforcer l'agriculture grâce à",

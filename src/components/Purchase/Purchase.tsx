@@ -261,35 +261,35 @@ export default function Purchase() {
 
   const getBuyButtonText = () => {
     if (payAmount === 0)
-      return 'Enter Amount';
+      return t('Purchase.enterAmount'); //Enter Amount
 
     if (isPaying)
-      return 'Paying ...';
+      return t('Purchase.paying');//Paying ...
 
     if (payKind === 0)
       if (isApproving)
-        return 'Approving ...';
+        return t('Purchase.approving'); //'Approving ...'
       else if (parseFloat(ethers.formatUnits(balanceUSDT ? balanceUSDT : "0", 18)) <= payAmount)
-        return 'Insufficient Balance';
+        return t('Purchase.insufficientBalance'); //'Insufficient Balance';
       else if (parseFloat(ethers.formatUnits(approvedAmountUSDT ? approvedAmountUSDT : "0", 18)) < payAmount)
-        return 'Approve USDT';
+        return t('Purchase.approveUSDT'); //'Approve USDT';
       else
-        return 'Pay with USDT';
+        return t('Purchase.payWithUSDT'); //Pay with USDT;
     else if (payKind === 1) {
       if (balance?.formatted && parseFloat(balance.formatted) <= payAmount)
-        return 'Insufficient Balance';
+        return t('Purchase.insufficientBalance');
       else
-        return 'Pay with BNB';
+        return t('Purchase.payWithBNB'); //Pay with BNB;
     }
     else if (payKind === 2) {
       if (isApproving)
-        return 'Approving ...';
+        return t('Purchase.approving');
       else if (parseFloat(ethers.formatUnits(balanceUSDC ? balanceUSDC : "0", 18)) <= payAmount)
-        return 'Insufficient Balance';
+        return t('Purchase.insufficientBalance');
       else if (parseFloat(ethers.formatUnits(approvedAmountUSDC ? approvedAmountUSDC : "0", 18)) < payAmount)
-        return 'Approve USDC';
+        return  t('Purchase.approveUSDC'); //'Approve USDC';
       else
-        return 'Pay with USDC';
+        return t('Purchase.approveUSDC'); //'Approve USDC';
     }
   }
 
@@ -526,7 +526,7 @@ export default function Purchase() {
                 className="cursor-pointer w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
                 onClick={handleBuy}
                 //hidden={parseInt(phase) == 2 ? true : false}
-                disabled={parseInt(phase) == 2 ? true : false}
+                //disabled={parseInt(phase) == 2 ? true : false}
               >
                 {getBuyButtonText()}
               </button>
@@ -535,7 +535,7 @@ export default function Purchase() {
                 className="cursor-pointer w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
                 onClick={openConnectModal}
                 //hidden={parseInt(phase) == 2 ? true : false}
-                disabled={parseInt(phase) == 2 ? true : false}
+                //disabled={parseInt(phase) == 2 ? true : false}
               >
                 {t("Purchase.connectWalletandBuy")} $ETATA
               </button>
