@@ -9,18 +9,31 @@ import { WagmiProvider } from "wagmi";
 import { bsc, bscTestnet } from "wagmi/chains";
 import { getDefaultConfig, RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { RefreshContextProvider } from './context/RefreshContext'
+import { RefreshContextProvider } from './context/RefreshContext';
+import {
+  metaMaskWallet,
+  trustWallet,
+  coinbaseWallet,
+  walletConnectWallet
+} from '@rainbow-me/rainbowkit/wallets';
 
 const config = getDefaultConfig({
-  appName: "USSE",
-  projectId: "855e1e89077779023ebffcdb394cf688",
-  chains: [
-    //bsc,
-    bscTestnet,
+  appName: 'USSE',
+  projectId: '855e1e89077779023ebffcdb394cf688',
+  wallets: [
+    {
+      groupName: 'BSC wallets',
+      wallets: [metaMaskWallet, trustWallet, coinbaseWallet, walletConnectWallet],
+    },
   ],
+  chains: [
+    bsc,
+    bscTestnet
+  ],
+  ssr: true,
 });
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -29,7 +42,7 @@ createRoot(document.getElementById('root')!).render(
         <RainbowKitProvider
           showRecentTransactions={true}
           modalSize="compact"
-          initialChain={bsc}
+          initialChain={bscTestnet}
           theme={darkTheme({
             accentColor: '#7b3fe4',
             accentColorForeground: 'white',
