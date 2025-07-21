@@ -18,8 +18,8 @@ import {
 } from '@rainbow-me/rainbowkit/wallets';
 
 const config = getDefaultConfig({
-  appName: 'USSE',
-  projectId: '855e1e89077779023ebffcdb394cf688',
+  appName: 'ETATA',
+  projectId: '04b3ded0b193d3c155deb2624eebf41d',
   wallets: [
     {
       groupName: 'BSC wallets',

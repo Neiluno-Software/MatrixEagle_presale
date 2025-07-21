@@ -526,7 +526,7 @@ export default function Purchase() {
                 className="cursor-pointer w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
                 onClick={handleBuy}
                 //hidden={parseInt(phase) == 2 ? true : false}
-                //disabled={parseInt(phase) == 2 ? true : false}
+                disabled={parseInt(phase) == 2 ? true : false}
               >
                 {getBuyButtonText()}
               </button>
@@ -535,7 +535,7 @@ export default function Purchase() {
                 className="cursor-pointer w-full bg-[#00D962] hover:bg-[#00D962]/90 text-[#01273E] text-xs sm:text-base md:text-lg 2xl:text-[20px] font-bold py-2.5 sm:py-4 2xl:py-3 rounded-[10px] transition-colors"
                 onClick={openConnectModal}
                 //hidden={parseInt(phase) == 2 ? true : false}
-                //disabled={parseInt(phase) == 2 ? true : false}
+                disabled={parseInt(phase) == 2 ? true : false}
               >
                 {t("Purchase.connectWalletandBuy")} $ETATA
               </button>
