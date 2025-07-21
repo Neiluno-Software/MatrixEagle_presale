@@ -1,4 +1,4 @@
-export const BACKEND_BASE_URL = 'http://api.etata.io'; //'https://etata.finance';
+export const BACKEND_BASE_URL = 'https://api.etata.io'; //'https://etata.finance';
 
 export const MAIN_NET = 56;
 export const TEST_NET = 97;
