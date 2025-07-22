@@ -6,7 +6,7 @@ import App from './App.tsx'
 import "@rainbow-me/rainbowkit/styles.css";
 import "react-toastify/dist/ReactToastify.css";
 import { WagmiProvider } from "wagmi";
-import { bsc, bscTestnet } from "wagmi/chains";
+import { /*bsc, */bscTestnet } from "wagmi/chains";
 import { getDefaultConfig, RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RefreshContextProvider } from './context/RefreshContext';

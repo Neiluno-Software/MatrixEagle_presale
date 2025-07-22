@@ -516,7 +516,7 @@ export default function Purchase() {
 
           {/* Rate Info */}
           <div className="text-left text-white text-xs sm:text-base md:text-lg xl:text-[16px] 2xl:text-[22px]">
-            {t("Purchase.currentRate")}: 1 USD = ${tokenPrice ? (1 / parseFloat(ethers.formatUnits(tokenPrice, 8))).toFixed(1) : "0"} $ETATA
+            {t("Purchase.currentRate")}: $1 USD = ${tokenPrice ? (1 / parseFloat(ethers.formatUnits(tokenPrice, 8))).toFixed(1) : "0"} $ETATA
           </div>
 
           {/* Connect Button */}
