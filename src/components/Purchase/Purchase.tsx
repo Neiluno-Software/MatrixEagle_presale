@@ -325,7 +325,7 @@ export default function Purchase() {
         address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
         abi: PRESALE_ABI,
         functionName: "buyTokenByUSDT",
-        args: [["0x0000000000000000000000000000000000000000000000000000000000000000"], ethers.parseUnits(payAmount.toString(), 18)]
+        args: [ethers.parseUnits(payAmount.toString(), 18)]
       })
         .then(() => {
           setIsPaying(false);
@@ -343,7 +343,7 @@ export default function Purchase() {
         address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
         abi: PRESALE_ABI,
         functionName: "buyTokenByBNB",
-        args: [["0x0000000000000000000000000000000000000000000000000000000000000000"]],
+        args: [],
         value: ethers.parseEther(payAmount.toString())
       })
         .then(() => {
@@ -382,7 +382,7 @@ export default function Purchase() {
         address: chainId === MAIN_NET ? PRESALE_ADDRESS_MAIN : PRESALE_ADDRESS_TEST,
         abi: PRESALE_ABI,
         functionName: "buyTokenByUSDC",
-        args: [["0x0000000000000000000000000000000000000000000000000000000000000000"], ethers.parseUnits(payAmount.toString(), 18)]
+        args: [ethers.parseUnits(payAmount.toString(), 18)]
       })
         .then(() => {
           setIsPaying(false);
