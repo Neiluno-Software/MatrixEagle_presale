@@ -444,7 +444,7 @@ export default function Purchase() {
               style={{ width: `${progress < 2 ? 2 : progress}%` }}
             ></div>
             <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-              {t("Purchase.phase")}{parseInt(phase) + 1} : {progress.toFixed(2)}%
+              {t("Purchase.phase")} {parseInt(phase) + 1} : {progress.toFixed(2)}%
             </div>
           </div>
 
