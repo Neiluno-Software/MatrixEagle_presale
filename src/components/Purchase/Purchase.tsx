@@ -394,6 +394,12 @@ export default function Purchase() {
     }
   }
 
+  function formatFloatWithCommas(numStr: string): string {
+    const parts = numStr.split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  }
+
   const currencyList=[
     {label:'USDT', img:usdt},
     {label:'BNB', img:bnb},
@@ -446,12 +452,12 @@ export default function Purchase() {
           <div className="flex justify-between text-center mb-4 md:mb-5 2xl:mb-5 space-y-2 3xl:space-y-2 text-xs sm:text-base md:text-lg xl:text-[16px] 2xl:text-[22px]">
             <div>
               <span className="text-white">{t("Purchase.usdRaised")} </span>
-              <span className="text-green-400 font-bold">${parseFloat(ethers.formatUnits(totalUSD ? totalUSD.toString() : "0", "ether")).toFixed(2)}</span>
+              <span className="text-green-400 font-bold">${formatFloatWithCommas(parseFloat(ethers.formatUnits(totalUSD ? totalUSD.toString() : "0", "ether")).toFixed(2))}</span>
             </div>
             <div className="text-white">
               <span>{t("Purchase.tokens")} </span>
               <span className="text-green-400 font-semibold">{t("Purchase.sold")}</span>
-              <span>: {parseFloat(ethers.formatUnits(tokenTotal ? tokenTotal.toString() : "0", "ether")).toFixed(2)}</span>
+              <span>: {formatFloatWithCommas(parseFloat(ethers.formatUnits(tokenTotal ? tokenTotal.toString() : "0", "ether")).toFixed(2))}</span>
             </div>
           </div>
 
