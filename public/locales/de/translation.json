@@ -18,6 +18,7 @@
     "seconds": "SEKUNDEN",
     "tokens": "Token",
     "sold": "Verkauft",
+    "phase": "Phase",
     "paying": "Bezahlen mit Wallet",
     "amountTOInvest": "Betrag, den Sie investieren möchten",
     "currentRate": "Aktueller Kurs",

@@ -438,7 +438,7 @@ export default function Purchase() {
               style={{ width: `${progress < 2 ? 2 : progress}%` }}
             ></div>
             <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-              {(parseFloat(ethers.formatUnits(tokenTotal ? tokenTotal.toString() : "0", "ether")) / 120000).toFixed(2)}%
+              {t("Purchase.phase")}{phase + 1} : {progress.toFixed(2)}%
             </div>
           </div>
 
