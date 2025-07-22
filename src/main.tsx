@@ -27,7 +27,7 @@ const config = getDefaultConfig({
     },
   ],
   chains: [
-    bsc,
+    /*bsc,*/
     bscTestnet
   ],
   ssr: true,
