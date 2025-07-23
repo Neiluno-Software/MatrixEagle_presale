@@ -300,19 +300,6 @@
     },
     {
       "inputs": [],
-      "name": "governanceAddress",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
       "name": "initialize",
       "outputs": [],
       "stateMutability": "nonpayable",
@@ -456,19 +443,6 @@
         }
       ],
       "name": "setBNBPriceFeed",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_governanceAddress",
-          "type": "address"
-        }
-      ],
-      "name": "setGovernanceAddress",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
