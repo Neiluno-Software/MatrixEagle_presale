@@ -244,12 +244,17 @@ export default function Purchase() {
   };
 
   const handleChange = (e: any) => {
-    const regex = /^(?:\d+(\.\d{0,3})?)?$/;
+    const regex = /^(?:\d+(?:\.\d{0,3})?|\.|\.\d{1,3}|\d{0}\.\d{1,3})?$/;
     if (regex.test(e.target.value)) {
-      setPayAmount(e.target.value);
-    } else if(e.target.value == '') {
+      let value = e.target.value;
+      if (value.startsWith('.')) {
+        value = '0' + value;
+      }
+      setPayAmount(value);
+    } else if (e.target.value == '') {
       setPayAmount(0);
     }
+
 
     if (payKind === 0)
       setExpectationTokenAmount(e.target.value / parseFloat(ethers.formatUnits(tokenPrice ? tokenPrice.toString() : "1", 8)));
